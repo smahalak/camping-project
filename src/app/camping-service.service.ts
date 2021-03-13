@@ -12,6 +12,9 @@ export class CampingServiceService {
   campingSitesURL: string = "https://ridb.recreation.gov/api/v1/campsites";
   //endpoint will return campingsites
 
+  facilityURL: string = "https://ridb.recreation.gov/api/v1/facilities";
+  //using to get states
+
   constructor(private http: HttpClient) { }
 
 
@@ -22,4 +25,14 @@ export class CampingServiceService {
       }
     })
   }
+
+
+  getStateFacility = (): any => {
+    return this.http.get(this.facilityURL, {
+      headers: {
+        apikey: this.apiKey,
+      }
+    })
+  }
+
 }
