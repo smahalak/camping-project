@@ -23,10 +23,12 @@ export class HomeComponent implements OnInit {
 
 
   getStates = (): void => {
-    this.campService.getStateFacility().subscribe((response: any) => {
+    this.campService.getCampingState().subscribe((response: any) => {
       console.log(response);
       this.campData = response;
     });
   };
+
+
 
 }
