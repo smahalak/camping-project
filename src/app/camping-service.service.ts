@@ -75,17 +75,18 @@ export class CampingServiceService {
     'WY',
   ];
 
+
   constructor(private http: HttpClient) {}
 
-  getCampingState = (): any => {
-    let params: any = {
-      limit: '50',
-      state: 'MI',
-    };
+
+
+
+
     return this.http.get(this.facilityURL, {
       headers: { apikey: this.apiKey },
       params: params,
     });
+
   };
 
   getCampingSites = (): any => {
@@ -103,4 +104,7 @@ export class CampingServiceService {
       },
     });
   };
-}
+
+
+  getStates = () => {};
+
