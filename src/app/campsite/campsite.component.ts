@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { CampingServiceService } from '../camping-service.service';
 
@@ -9,18 +9,28 @@ import { CampingServiceService } from '../camping-service.service';
 })
 export class CampsiteComponent implements OnInit {
   @Input() stateObjectRef: any;
+  @Input() stateDetailRef: any;
+  @Output() showDetailEvent = new EventEmitter<string>();
+  @Output() showAttributeEvent = new EventEmitter<string>();
   stateName: string;
   states: any;
+  showDetails: boolean = false;
+  constructor(
+    private campService: CampingServiceService,
+    private router: Router
+  ) {}
 
-  constructor(private campService: CampingServiceService, private router: Router) { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void { }
+  emitShowDetailEvent = (stateObjectRef: any) => {
+    this.showDetailEvent.emit();
+  };
+  emitDetailEvent = (stateDetailRef: any) => {
+    this.showAttributeEvent.emit();
+  };
 
-
-  // showSelectedState = (state: ) => {
-  //   console.log(state);
-  //   this.router.navigate([`/home/${state}`]);
-  // }
-
-
+  setShowDetails = (): void => {
+    this.showDetails = !this.showDetails;
+    console.log(this.showDetails);
+  };
 }
