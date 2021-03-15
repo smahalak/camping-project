@@ -13,77 +13,22 @@ export class CampingServiceService {
   facilityURL: string = 'https://ridb.recreation.gov/api/v1/facilities';
   //using to get states
 
-  state: string[] = [
-    'AL',
-    'AK',
-    'AS',
-    'AZ',
-    'AR',
-    'CA',
-    'CO',
-    'CT',
-    'DE',
-    'DC',
-    'FM',
-    'FL',
-    'GA',
-    'GU',
-    'HI',
-    'ID',
-    'IL',
-    'IN',
-    'IA',
-    'KS',
-    'KY',
-    'LA',
-    'ME',
-    'MH',
-    'MD',
-    'MA',
-    'MI',
-    'MN',
-    'MS',
-    'MO',
-    'MT',
-    'NE',
-    'NV',
-    'NH',
-    'NJ',
-    'NM',
-    'NY',
-    'NC',
-    'ND',
-    'MP',
-    'OH',
-    'OK',
-    'OR',
-    'PW',
-    'PA',
-    'PR',
-    'RI',
-    'SC',
-    'SD',
-    'TN',
-    'TX',
-    'UT',
-    'VT',
-    'VI',
-    'VA',
-    'WA',
-    'WV',
-    'WI',
-    'WY',
-  ];
   selectStateName: string;
-  constructor(private http: HttpClient) {}
 
-  getCampingState = (): any => {
+  constructor(private http: HttpClient) { }
+
+  getCampingState = (state: string): any => {
     let params: any = {
       limit: '50',
-      state: 'MI',
+      state: state,
+      apikey: this.apiKey,
     };
     return this.http.get(this.facilityURL, { params: params });
   };
+
+
+
+
   getCampingSites = (): any => {
     return this.http.get(this.campingSitesURL, {
       headers: {
@@ -98,6 +43,5 @@ export class CampingServiceService {
       },
     });
   };
-  // getSearchByState = ():any => {
-  // };
+
 }

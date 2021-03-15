@@ -3,4 +3,4 @@
 <app-search-criteria
   (searchStateEvent)="onStateSearch($event)"
 ></app-search-criteria>
-<app-campsite [stateRef]="stateData"></app-campsite>
+<app-campsite  *ngFor = "let stateObject of stateInfo?.RECDATA" [stateObjectRef]="stateObject"></app-campsite>

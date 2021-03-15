@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CampingServiceService } from '../camping-service.service';
 
 @Component({
   selector: 'app-campsite',
@@ -6,9 +8,19 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./campsite.component.css'],
 })
 export class CampsiteComponent implements OnInit {
-  @Input() stateRef: string;
+  @Input() stateObjectRef: any;
   stateName: string;
-  constructor() {}
+  states: any;
 
-  ngOnInit(): void {}
+  constructor(private campService: CampingServiceService, private router: Router) { }
+
+  ngOnInit(): void { }
+
+
+  // showSelectedState = (state: ) => {
+  //   console.log(state);
+  //   this.router.navigate([`/home/${state}`]);
+  // }
+
+
 }
