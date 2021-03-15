@@ -1,10 +1,9 @@
-<p>search-criteria works!</p>
-<!-- 
-<form>
-    <select name="state" id="state" class="state" ngModel>
-        <option value=""></option>
-       
-        <option *ngFor="let genre of genres?.genres" value="{{ genre.id }}">
-            {{ genre.name }}
-          </option>
-</form> -->
+<form #stateSearchForm="ngForm" (ngSubmit)="emitStateSearch(stateSearchForm)">
+  <label for="state">Select a State</label>
+  <select name="state" id="state" class="state" ngModel>
+    <option *ngFor="let state of states" value="{{ state }}">
+      {{ state }}
+    </option>
+  </select>
+  <button>Submit</button>
+</form>

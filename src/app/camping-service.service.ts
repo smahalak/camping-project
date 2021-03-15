@@ -3,48 +3,103 @@ import { Injectable } from '@angular/core';
 import { secret } from './secrets';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CampingServiceService {
-
-
   apiKey: string = secret.api_key;
-  campingSitesURL: string = "https://ridb.recreation.gov/api/v1/campsites";
+  campingSitesURL: string = 'https://ridb.recreation.gov/api/v1/campsites';
   //endpoint will return campingsites
 
-  facilityURL: string = "https://ridb.recreation.gov/api/v1/facilities";
+  facilityURL: string = 'https://ridb.recreation.gov/api/v1/facilities';
   //using to get states
 
-  state: string[] = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'];
+  state: string[] = [
+    'AL',
+    'AK',
+    'AS',
+    'AZ',
+    'AR',
+    'CA',
+    'CO',
+    'CT',
+    'DE',
+    'DC',
+    'FM',
+    'FL',
+    'GA',
+    'GU',
+    'HI',
+    'ID',
+    'IL',
+    'IN',
+    'IA',
+    'KS',
+    'KY',
+    'LA',
+    'ME',
+    'MH',
+    'MD',
+    'MA',
+    'MI',
+    'MN',
+    'MS',
+    'MO',
+    'MT',
+    'NE',
+    'NV',
+    'NH',
+    'NJ',
+    'NM',
+    'NY',
+    'NC',
+    'ND',
+    'MP',
+    'OH',
+    'OK',
+    'OR',
+    'PW',
+    'PA',
+    'PR',
+    'RI',
+    'SC',
+    'SD',
+    'TN',
+    'TX',
+    'UT',
+    'VT',
+    'VI',
+    'VA',
+    'WA',
+    'WV',
+    'WI',
+    'WY',
+  ];
 
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  getCampingState = ((): any => {
+  getCampingState = (): any => {
     let params: any = {
       limit: '50',
       state: 'MI',
-    }
-    return this.http.get(this.facilityURL, { params: params })
-  })
-
+    };
+    return this.http.get(this.facilityURL, { params: params });
+  };
 
   getCampingSites = (): any => {
     return this.http.get(this.campingSitesURL, {
       headers: {
         apikey: this.apiKey,
-      }
-    })
-  }
-
+      },
+    });
+  };
 
   getStateFacility = (): any => {
     return this.http.get(this.facilityURL, {
       headers: {
         apikey: this.apiKey,
-      }
-    })
-  }
+      },
+    });
+  };
 
+  getStates = () => {};
 }
-

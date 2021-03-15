@@ -1,4 +1,6 @@
 <p>home works!</p>
 <app-header></app-header>
-<app-search-criteria></app-search-criteria>
-<app-campsite></app-campsite>
+<app-search-criteria
+  (searchStateEvent)="onStateSearch($event)"
+></app-search-criteria>
+<app-campsite [stateRef]="stateData"></app-campsite>
