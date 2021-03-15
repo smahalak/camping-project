@@ -74,21 +74,16 @@ export class CampingServiceService {
     'WI',
     'WY',
   ];
-
-
+  selectStateName: string;
   constructor(private http: HttpClient) {}
 
-
-
-
-
-    return this.http.get(this.facilityURL, {
-      headers: { apikey: this.apiKey },
-      params: params,
-    });
-
+  getCampingState = (): any => {
+    let params: any = {
+      limit: '50',
+      state: 'MI',
+    };
+    return this.http.get(this.facilityURL, { params: params });
   };
-
   getCampingSites = (): any => {
     return this.http.get(this.campingSitesURL, {
       headers: {
@@ -96,7 +91,6 @@ export class CampingServiceService {
       },
     });
   };
-
   getStateFacility = (): any => {
     return this.http.get(this.facilityURL, {
       headers: {
@@ -104,7 +98,6 @@ export class CampingServiceService {
       },
     });
   };
-
-
-  getStates = () => {};
-
+  // getSearchByState = ():any => {
+  // };
+}
