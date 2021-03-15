@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(private campService: CampingServiceService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    //takes queryparm from onStateSearch and if State is selected grabs state data from service with state as a queryparm
     this.route.queryParamMap.subscribe((response) => {
       console.log(response)
       let state: string | null = response.get('state');
@@ -26,6 +27,7 @@ export class HomeComponent implements OnInit {
         this.campService.getCampingState(state).subscribe((data) => {
           console.log(data);
           this.stateInfo = data;
+          //stateInfo now used in home html which will pass to chile campingsite
         })
       }
     })
@@ -38,6 +40,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  //looks at search-criteria form that was submitted and stores result in query parm which is used onit
   onStateSearch = (state: string) => {
     this.router.navigate(["/home"],
       {
