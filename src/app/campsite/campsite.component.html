@@ -1,8 +1,17 @@
-
-<div >
-
-    <!-- <p>{{ stateRef }}</p> -->
-    <p >{{ stateObjectRef?.FacilityName }}</p>
-    <p>{{ stateObjectRef?.FacilityPhone }}</p>
- 
+<div>
+  <!-- <p>{{ stateRef }}</p> -->
+  <p>{{ stateObjectRef?.FacilityName }}</p>
+  <p>{{ stateObjectRef?.FacilityPhone }}</p>
+  <a
+    (click)="
+      emitShowDetailEvent(stateObjectRef);
+      emitDetailEvent(stateDetailRef);
+      setShowDetails()
+    "
+  >
+    more details</a
+  >
+</div>
+<div *ngIf="showDetails">
+  <p>{{ stateDetailRef?.ATTRIBUTES }}</p>
 </div>

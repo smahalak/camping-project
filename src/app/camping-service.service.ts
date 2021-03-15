@@ -15,27 +15,26 @@ export class CampingServiceService {
 
   selectStateName: string;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCampingState = (state: string): any => {
     let params: any = {
-      limit: '50',
+      limit: '10',
       state: state,
       apikey: this.apiKey,
     };
     return this.http.get(this.facilityURL, { params: params });
   };
 
-
-
-
-  getCampingSites = (): any => {
-    return this.http.get(this.campingSitesURL, {
-      headers: {
-        apikey: this.apiKey,
-      },
-    });
+  getCampingSites = (state: string): any => {
+    let params: any = {
+      limit: '10',
+      state: state,
+      apikey: this.apiKey,
+    };
+    return this.http.get(this.campingSitesURL, { params: params });
   };
+
   getStateFacility = (): any => {
     return this.http.get(this.facilityURL, {
       headers: {
@@ -43,5 +42,4 @@ export class CampingServiceService {
       },
     });
   };
-
 }
