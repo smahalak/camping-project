@@ -6,7 +6,12 @@
   *ngFor="let stateObject of stateFacilityInfo?.RECDATA"
   [stateObjectRef]="stateObject"
   (showDetailEvent)="getAttributes($event)"
+  (showCampsiteIdEvent)="getCampsiteId($event)"
+  [campsiteArray]="campsiteIdInfo"
 ></app-campsite>
-<div>
+<div
+  *ngFor="let campsiteIdObject of campsiteIdInfo?.RECDATA"
+  [campsiteIdRef]="campsiteIdObject"
+>
   <p>This will be a popup</p>
 </div>

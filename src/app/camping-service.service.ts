@@ -7,7 +7,10 @@ import { secret } from './secrets';
 })
 export class CampingServiceService {
   apiKey: string = secret.api_key;
-  campingSitesURL: string = 'https://ridb.recreation.gov/api/v1/campsites';
+  facilityId: string;
+  campsiteId: string;
+  campingSitesURL: string =
+    'https://ridb.recreation.gov/api/v1/facilities/${facilityId}/campsites';
   //endpoint will return campingsites
 
   facilityURL: string = 'https://ridb.recreation.gov/api/v1/facilities';
@@ -26,12 +29,28 @@ export class CampingServiceService {
     return this.http.get(this.facilityURL, { params: params });
   };
 
-  getCampingSites = (state: string): any => {
+  getCampingSites = (facilityId: string): any => {
     let params: any = {
       limit: '10',
-      state: state,
       apikey: this.apiKey,
     };
+    this.campingSitesURL =
+      'https://ridb.recreation.gov/api/v1/facilities/' +
+      facilityId +
+      '/campsites';
+    console.log(this.campingSitesURL);
+    return this.http.get(this.campingSitesURL, { params: params });
+  };
+  getSelectedCampsiteId = (campsiteId: string): any => {
+    let params: any = {
+      limit: '10',
+      apikey: this.apiKey,
+    };
+    this.campingSitesURL =
+      'https://ridb.recreation.gov/api/v1/campsites/' +
+      campsiteId +
+      '/attributes';
+
     return this.http.get(this.campingSitesURL, { params: params });
   };
 
