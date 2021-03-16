@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   state: string | null = null;
   stateFacilityInfo: any;
   attributes: any;
+  facilityArray: any[];
 
   constructor(
     private campService: CampingServiceService,
@@ -26,7 +27,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     //takes queryparm from onStateSearch and if State is selected grabs state data from service with state as a queryparm
     this.route.queryParamMap.subscribe((response) => {
-      console.log(response);
+      //console.log(response);
       let state: string | null = response.get('state');
       if (state) {
         this.getCampingFacilities(state);
@@ -37,8 +38,14 @@ export class HomeComponent implements OnInit {
 
   getCampingFacilities = (state: string) => {
     this.campService.getCampingState(state).subscribe((data) => {
-      console.log(data);
+      //console.log(data);
       this.stateFacilityInfo = data;
+      console.log(this.stateFacilityInfo);
+      this.facilityArray = this.stateFacilityInfo.RECDATA;
+      console.log('i am here');
+      console.log(this.facilityArray);
+      //console.log(this.facilityArray);
+
       //stateFacilityInfo now used in home html which will pass to child campingsite
     });
   };
@@ -47,7 +54,7 @@ export class HomeComponent implements OnInit {
       //console.log(response);
 
       this.attributes = response;
-      console.log(this.attributes);
+      //console.log(this.attributes);
     });
   };
   // getAndSetState = (state: any): void => {

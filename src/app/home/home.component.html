@@ -1,11 +1,11 @@
 <p>home works!</p>
 <app-search-criteria
-  (searchStateEvent)="onStateSearch($event)"
+  (searchStateEvent)="onStateSearch($event); getCampingFacilities($event)"
 ></app-search-criteria>
 <app-campsite
   *ngFor="let stateObject of stateFacilityInfo?.RECDATA"
   [stateObjectRef]="stateObject"
-  (showDetailEvent)="getDetails($event)"
+  (showDetailEvent)="getAttributes($event)"
 ></app-campsite>
 <div>
   <p>This will be a popup</p>
