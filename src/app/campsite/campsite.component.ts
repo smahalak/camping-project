@@ -10,7 +10,7 @@ import { CampingServiceService } from '../camping-service.service';
 export class CampsiteComponent implements OnInit {
   @Input() stateObjectRef: any;
   @Input() stateDetailRef: any;
-  @Output() showDetailEvent = new EventEmitter<string>();
+  @Output() showDetailEvent = new EventEmitter<any>();
   @Output() showAttributeEvent = new EventEmitter<any>();
   stateName: string;
   states: any;
@@ -23,7 +23,7 @@ export class CampsiteComponent implements OnInit {
   ngOnInit(): void {}
 
   emitShowDetailEvent = (stateObjectRef: any) => {
-    this.showDetailEvent.emit();
+    this.showDetailEvent.emit(stateObjectRef);
   };
   emitDetailEvent = (stateDetailRef: any) => {
     this.showAttributeEvent.emit(stateDetailRef);
@@ -31,6 +31,6 @@ export class CampsiteComponent implements OnInit {
 
   setShowDetails = (): void => {
     this.showDetails = !this.showDetails;
-    console.log(this.showDetails);
+    // console.log(this.showDetails);
   };
 }
