@@ -2,16 +2,18 @@
   <!-- <p>{{ stateRef }}</p> -->
   <p>{{ stateObjectRef?.FacilityID }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
-  <a
-    (click)="
-      emitShowDetailEvent(stateObjectRef);
-      emitDetailEvent(stateDetailRef);
-      setShowDetails()
-    "
-  >
-    more details</a
-  >
+  <p (click)="emitShowDetailEvent(stateObjectRef); setShowDetails()">
+    more details
+  </p>
 </div>
-<div *ngIf="showDetails">
-  <p>{{ stateDetailRef?.RECDATA?.ATTRIBUTES }}</p>
+<div *ngFor="let camp of campsiteArray">
+  <div *ngIf="showDetails">
+    <p>{{ stateDetailRef?.RECDATA?.ATTRIBUTES }}</p>
+  </div>
+  <p (click)="emitCampsiteIdEvent(camp?.CampsiteID); setShowCampsiteId()">
+    Select A campSite
+  </p>
 </div>
+<!-- emitShowDetailEvent(stateObjectRef); -->
+<!-- emitDetailEvent(stateDetailRef); -->
+<!-- setShowDetails()" -->

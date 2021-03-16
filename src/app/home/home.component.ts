@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   stateFacilityInfo: any;
   attributes: any;
   facilityArray: any[];
+  campsiteIdInfo: any;
 
   constructor(
     private campService: CampingServiceService,
@@ -49,20 +50,27 @@ export class HomeComponent implements OnInit {
       //stateFacilityInfo now used in home html which will pass to child campingsite
     });
   };
-  getAttributes = (state: string) => {
-    this.campService.getCampingSites(state).subscribe((response) => {
-      //console.log(response);
+  getAttributes = (stateObjectRef: any) => {
+    //console.log(stateObjectRef);
+    let facilityid: string = stateObjectRef.FacilityID;
+    console.log(facilityid);
+    this.campService.getCampingSites(facilityid).subscribe((response) => {
+      //  console.log(response);
+      this.campsiteIdInfo = response.RECDATA;
 
-      this.attributes = response;
-      //console.log(this.attributes);
+      // console.log(this.attributes);
     });
   };
-  // getAndSetState = (state: any): void => {
-  //   this.campService.getCampingState(state).subscribe((response: any) => {
-  //     this.states = response;
-  //     //  console.log(response);
-  //   });
-  // };
+  getCampsiteId = (campsiteIdRef: any) => {
+    //console.log(stateObjectRef);
+    let campsiteId: string = campsiteIdRef;
+    console.log('in the getcampsiteID method');
+    this.campService.getSelectedCampsiteId(campsiteId).subscribe((response) => {
+      console.log(response);
+      this.campsiteIdInfo = response.RECDATA;
+      // console.log(this.attributes);
+    });
+  };
 
   //looks at search-criteria form that was submitted and stores result in query parm which is used onit
   onStateSearch = (state: string) => {
