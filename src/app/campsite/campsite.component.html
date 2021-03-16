@@ -1,4 +1,4 @@
-<div>
+<div class="test-border">
   <!-- <p>{{ stateRef }}</p> -->
   <p>{{ stateObjectRef?.FacilityName }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
@@ -13,5 +13,5 @@
   >
 </div>
 <div *ngIf="showDetails">
-  <p>{{ stateDetailRef?.ATTRIBUTES }}</p>
+  <p>{{ stateDetailRef?.RECDATA?.ATTRIBUTES }}</p>
 </div>

@@ -11,7 +11,7 @@ export class CampsiteComponent implements OnInit {
   @Input() stateObjectRef: any;
   @Input() stateDetailRef: any;
   @Output() showDetailEvent = new EventEmitter<string>();
-  @Output() showAttributeEvent = new EventEmitter<string>();
+  @Output() showAttributeEvent = new EventEmitter<any>();
   stateName: string;
   states: any;
   showDetails: boolean = false;
@@ -26,7 +26,7 @@ export class CampsiteComponent implements OnInit {
     this.showDetailEvent.emit();
   };
   emitDetailEvent = (stateDetailRef: any) => {
-    this.showAttributeEvent.emit();
+    this.showAttributeEvent.emit(stateDetailRef);
   };
 
   setShowDetails = (): void => {
