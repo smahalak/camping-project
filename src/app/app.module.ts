@@ -9,6 +9,11 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { CampsiteComponent } from './campsite/campsite.component';
+import { SuppliesComponent } from './supplies/supplies.component';
+import { RecipesComponent } from './recipes/recipes.component';
+import { AboutComponent } from './about/about.component';
+import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
+import { AddSuppliesComponent } from './add-supplies/add-supplies.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +22,11 @@ import { CampsiteComponent } from './campsite/campsite.component';
     HeaderComponent,
     SearchCriteriaComponent,
     CampsiteComponent,
+    SuppliesComponent,
+    RecipesComponent,
+    AboutComponent,
+    FourOhFourComponent,
+    AddSuppliesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

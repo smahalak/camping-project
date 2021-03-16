@@ -14,8 +14,8 @@ export class HomeComponent implements OnInit {
   campData: any;
   states: any;
   state: string | null = null;
-  stateInfo: any;
-  detailInfo: any;
+  stateFacilityInfo: any;
+  attributes: any;
 
   constructor(
     private campService: CampingServiceService,
@@ -29,28 +29,33 @@ export class HomeComponent implements OnInit {
       console.log(response);
       let state: string | null = response.get('state');
       if (state) {
-        this.campService.getCampingState(state).subscribe((data) => {
-          //   console.log(data);
-          this.stateInfo = data;
-          //stateInfo now used in home html which will pass to chile campingsite
-        });
+        this.getCampingFacilities(state);
+        this.getAttributes(state);
       }
     });
   }
-  getDetails = (state: any) => {
+
+  getCampingFacilities = (state: string) => {
+    this.campService.getCampingState(state).subscribe((data) => {
+      console.log(data);
+      this.stateFacilityInfo = data;
+      //stateFacilityInfo now used in home html which will pass to child campingsite
+    });
+  };
+  getAttributes = (state: string) => {
     this.campService.getCampingSites(state).subscribe((response) => {
       //console.log(response);
 
-      this.detailInfo = response;
-      console.log(this.detailInfo);
+      this.attributes = response;
+      console.log(this.attributes);
     });
   };
-  getAndSetState = (state: any): void => {
-    this.campService.getCampingState(state).subscribe((response: any) => {
-      this.states = response;
-      //  console.log(response);
-    });
-  };
+  // getAndSetState = (state: any): void => {
+  //   this.campService.getCampingState(state).subscribe((response: any) => {
+  //     this.states = response;
+  //     //  console.log(response);
+  //   });
+  // };
 
   //looks at search-criteria form that was submitted and stores result in query parm which is used onit
   onStateSearch = (state: string) => {
@@ -59,9 +64,5 @@ export class HomeComponent implements OnInit {
         state: state,
       },
     });
-    // this.campService.getCampingState(state).subscribe((response) => {
-    //   console.log(response);
-    //   this.stateInfo = response;
-    // })
   };
 }
