@@ -8,10 +8,5 @@
   (showDetailEvent)="getAttributes($event)"
   (showCampsiteIdEvent)="getCampsiteId($event)"
   [campsiteArray]="campsiteIdInfo"
-></app-campsite>
-<div
-  *ngFor="let campsiteIdObject of campsiteIdInfo?.RECDATA"
-  [campsiteIdRef]="campsiteIdObject"
 >
-  <p>This will be a popup</p>
-</div>
+</app-campsite>

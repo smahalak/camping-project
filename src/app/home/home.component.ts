@@ -55,18 +55,19 @@ export class HomeComponent implements OnInit {
     let facilityid: string = stateObjectRef.FacilityID;
     console.log(facilityid);
     this.campService.getCampingSites(facilityid).subscribe((response) => {
-      //  console.log(response);
+      console.log(response);
       this.campsiteIdInfo = response.RECDATA;
 
       // console.log(this.attributes);
     });
   };
-  getCampsiteId = (campsiteIdRef: any) => {
+  getCampsiteId = (campsiteIdRef: string) => {
     //console.log(stateObjectRef);
     let campsiteId: string = campsiteIdRef;
     console.log('in the getcampsiteID method');
     this.campService.getSelectedCampsiteId(campsiteId).subscribe((response) => {
       console.log(response);
+      console.log(campsiteId);
       //filter method on response
       this.campsiteIdInfo = response.RECDATA;
       console.log('campsiteIdInfo');
