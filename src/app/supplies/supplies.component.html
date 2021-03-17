@@ -1,24 +1,38 @@
 <h2>Supply List</h2>
 
-
 <form #filterForm="ngForm" (input)="setSearchTerm(filterForm)">
-  <input type="text" placeholder="Search for an item" name="filter" ngModel>
+  <input type="text" placeholder="Search for an item" name="filter" ngModel />
 </form>
-
-
-<ul>
-  <li *ngFor= "let item of filter(searchTerm); index as i ">
-    <p [ngClass]="{ 'dontAdd': !item.needed }" *ngIf="item.needed"  (click)="neededItem(item)">{{item.name}}</p>
-    
-    </li>
-
-</ul>
 
 <form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
-  <label for="name">First Name</label>
-  <input type="text" placeholder="Add an item" name="name" ngModel>
-
-  <button >Add</button>
+  <label for="name">Add Item</label>
+  <ul>
+    <li *ngFor="let item of filter(searchTerm); index as i">
+      <p
+        [ngClass]="{ dontAdd: !item.needed }"
+        *ngIf="item.needed"
+        (click)="neededItem(item)"
+      >
+        {{ item.name }}
+        <button class="delete-btn" (click)="deleteItem(i)">X</button>
+      </p>
+    </li>
+  </ul>
+  <label for="name">Add an Item </label>
+  <input type="text" placeholder="Add an item" name="name" id="name" ngModel />
+  <label for="type">Item Type</label>
+  <select name="type" id="type" ngModel>
+    <option value="Camping">Camping</option>
+    <option value="Kitchen">Kitchen</option>
+    <option value="BBQ">BBQ</option>
+    <option value="Firepit">Firepit</option>
+    <option value="Electric">Electric</option>
+  </select>
+  <button class="add-btn">Add</button>
 </form>
-
-
+<button (click)="showDiv(onPacking)">Show My List</button>
+<!-- <div
+  class="packing-list"
+  *ngIf="onPacking"
+  [ngClass]="{ hide-packing : onPacking}"
+></div> -->

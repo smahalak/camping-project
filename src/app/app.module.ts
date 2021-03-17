@@ -14,6 +14,7 @@ import { RecipesComponent } from './recipes/recipes.component';
 import { AboutComponent } from './about/about.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AddSuppliesComponent } from './add-supplies/add-supplies.component';
+import { SuppliesdivComponent } from './suppliesdiv/suppliesdiv.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AddSuppliesComponent } from './add-supplies/add-supplies.component';
     AboutComponent,
     FourOhFourComponent,
     AddSuppliesComponent,
+    SuppliesdivComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

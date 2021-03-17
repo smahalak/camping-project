@@ -1,5 +1,5 @@
 export interface Supply {
-    name: string;
-    type: string;
-    needed: boolean;
+  name: string;
+  type: string;
+  needed: boolean;
 }
