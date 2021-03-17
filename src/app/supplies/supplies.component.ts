@@ -115,12 +115,13 @@ export class SuppliesComponent implements OnInit {
   };
   showDiv = (onPacking: boolean): void => {
     this.onPacking = !this.onPacking;
-    if (onPacking) {
-      this.supplies.forEach((item: any) => {
-        return item.name;
-      });
-    }
   };
+  showPackingList = (): Supply[] => {
+    return this.supplies.filter((item) => {
+      return item.needed === true;
+    });
+  };
+
   addItem = (form: NgForm): void => {
     let newItem: Supply = {
       name: form.form.value.name,
@@ -131,7 +132,6 @@ export class SuppliesComponent implements OnInit {
     if (!this.find(form.form.value.name)) {
       this.supplies.push(newItem);
       console.log('test');
-      console.log(this.supplies);
     }
   };
 
