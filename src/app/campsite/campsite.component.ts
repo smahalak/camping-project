@@ -12,11 +12,12 @@ export class CampsiteComponent implements OnInit {
   @Input() campsiteIdRef: any;
   @Input() campsiteArray: any[];
   @Output() showDetailEvent = new EventEmitter<any>();
-  @Output() showCampsiteIdEvent = new EventEmitter<any>();
+  @Output() showCampsiteIdEvent = new EventEmitter<string>();
   stateName: string;
   states: any;
   showDetails: boolean = false;
   showCampsite: boolean = false;
+  showActivities: boolean = false;
 
   constructor(
     private campService: CampingServiceService,
@@ -28,18 +29,23 @@ export class CampsiteComponent implements OnInit {
   emitShowDetailEvent = (stateObjectRef: any) => {
     this.showDetailEvent.emit(stateObjectRef);
   };
-  emitCampsiteIdEvent = (campsiteIdRef: any) => {
+  emitCampsiteIdEvent = (campsiteIdRef: string) => {
     this.showCampsiteIdEvent.emit(campsiteIdRef);
   };
 
   setShowDetails = (): void => {
     this.showDetails = !this.showDetails;
-    // console.log(this.stateObjectRef);
-    // console.log(this.showDetails);
   };
-  setShowCampsiteId = (): void => {
-    this.showCampsite = !this.showCampsite;
+  setShowActivities = (): void => {
+    this.showActivities = !this.showActivities;
+    console.log(this.showActivities);
+  };
+  //setShowCampsiteId = (): void => {
+  //this.showCampsite = !this.showCampsite;
 
-    // console.log(this.showDetails);
+  // console.log(this.showDetails);
+  //};
+  test = (id: string) => {
+    this.emitCampsiteIdEvent(id);
   };
 }
