@@ -8,14 +8,17 @@ import { Supply } from '../interfaces/supply';
   styleUrls: ['./supplies.component.css'],
 })
 export class SuppliesComponent implements OnInit {
-  constructor() { }
+  onPacking: boolean = false;
+
+  constructor() {}
 
   supplies: Supply[] = [
     {
       name: 'Tent',
       type: 'Campsite',
       needed: true,
-    }, {
+    },
+    {
       name: 'Tarp',
       type: 'Campsite',
       needed: true,
@@ -86,45 +89,53 @@ export class SuppliesComponent implements OnInit {
       type: 'BBQ',
       needed: true,
     },
-
-  ]
+  ];
 
   searchTerm: string = '';
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {}
 
   setSearchTerm = (form: NgForm): void => {
     this.searchTerm = form.form.value.filter;
-  }
+  };
 
   filter = (term: string): Supply[] => {
     return this.supplies.filter((item) => {
       return item.name.toLowerCase().includes(term.toLowerCase());
-    })
-  }
+    });
+  };
 
   find = (term: string): boolean => {
     return this.supplies.some((item) => {
       return item.name.toLowerCase().includes(term.toLowerCase());
-    })
-  }
-
+    });
+  };
+  deleteItem = (index: number): void => {
+    this.supplies.splice(index, 1);
+  };
+  showDiv = (onPacking: boolean): void => {
+    this.onPacking = !this.onPacking;
+    if (onPacking) {
+      this.supplies.forEach((item: any) => {
+        return item.name;
+      });
+    }
+  };
   addItem = (form: NgForm): void => {
-
     let newItem: Supply = {
       name: form.form.value.name,
-      type: 'campsite',
+      type: form.form.value.type,
       needed: true,
-    }
+    };
 
     if (!this.find(form.form.value.name)) {
       this.supplies.push(newItem);
+      console.log('test');
+      console.log(this.supplies);
     }
-  }
+  };
 
   neededItem = (item: Supply): void => {
     item.needed = !item.needed;
-  }
-
+  };
 }
