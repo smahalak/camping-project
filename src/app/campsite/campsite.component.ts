@@ -29,7 +29,6 @@ export class CampsiteComponent implements OnInit {
     this.showDetailEvent.emit(stateObjectRef);
   };
   emitCampsiteIdEvent = (campsiteIdRef: any) => {
-    console.log(campsiteIdRef);
     this.showCampsiteIdEvent.emit(campsiteIdRef);
   };
 
