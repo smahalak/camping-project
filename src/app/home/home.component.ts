@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
     private campService: CampingServiceService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     //takes queryparm from onStateSearch and if State is selected grabs state data from service with state as a queryparm
@@ -67,6 +67,7 @@ export class HomeComponent implements OnInit {
     console.log('in the getcampsiteID method');
     this.campService.getSelectedCampsiteId(campsiteId).subscribe((response) => {
       console.log(response);
+      //filter method on response
       this.campsiteIdInfo = response.RECDATA;
       // console.log(this.attributes);
     });
