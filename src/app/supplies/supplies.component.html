@@ -1,13 +1,24 @@
 <h2>Supply List</h2>
-<ul>
-  <li>Item</li>
-  <li>Item</li>
-  <li>Item</li>
-  <li>Item</li>
-</ul>
-<p>If your camp has any of the below click the associated button</p>
 
-<button>BBQ</button>
-<button>Fire Pit</button>
-<button>Electricity</button>
-<button routerLink="/add-supplies">Add Supplies</button>
+
+<form #filterForm="ngForm" (input)="setSearchTerm(filterForm)">
+  <input type="text" placeholder="Search for an item" name="filter" ngModel>
+</form>
+
+
+<ul>
+  <li *ngFor= "let item of filter(searchTerm); index as i ">
+    <p [ngClass]="{ 'dontAdd': !item.needed }" *ngIf="item.needed"  (click)="neededItem(item)">{{item.name}}</p>
+    
+    </li>
+
+</ul>
+
+<form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
+  <label for="name">First Name</label>
+  <input type="text" placeholder="Add an item" name="name" ngModel>
+
+  <button >Add</button>
+</form>
+
+
