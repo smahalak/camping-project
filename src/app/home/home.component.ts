@@ -69,7 +69,7 @@ export class HomeComponent implements OnInit {
       console.log(campsiteId);
       //filter method on response
       this.campsiteIdInfo = response.RECDATA;
-      console.log('campsiteIdInfo');
+
       console.log(this.campsiteIdInfo);
     });
   };

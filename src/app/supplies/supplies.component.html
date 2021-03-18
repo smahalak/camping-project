@@ -4,10 +4,11 @@
   <input type="text" placeholder="Search for an item" name="filter" ngModel />
 </form>
 
-<form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
+<form #addForm="ngForm" (ngSubmit)="addItem(addForm)" >
   <label for="name">Add Item</label>
   <ul>
-    <li *ngFor="let item of filter(searchTerm); index as i">
+    <li *ngFor="let item of filter(searchTerm); index as i" >
+    
       <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
         {{ item.name }}
         <button class="delete-btn" (click)="deleteItem(i)">X</button>
@@ -25,6 +26,24 @@
     <option value="Electric">Electric</option>
   </select>
   <button class="add-btn">Add</button>
+
+
+  *ngFor="let item of showFilteredCampingCategory()">
+
+
+  <p>Filter by</p>
+
+  <button (click)="showFilteredCampingCategory('Camping')" > Camping Essentials</button>
+
+  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('Kitchen')">Kitchen</button>
+
+  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('BBQ')">BBQ</button>
+
+  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('Firepit')">Firepit</button>
+
+  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('Electric')">Electric</button>
+
+
 </form>
 <button (click)="showDiv(onPacking)">Show My List</button>
 <div class="packing-list" *ngIf="onPacking">
@@ -34,3 +53,6 @@
     </li>
   </ul>
 </div>
+
+<!-- see how we can use like the above to filter with showFilteredCampingCategory -->
+<!-- *ngFor="let item of showFilteredCampingCategory()"> -->

@@ -13,13 +13,12 @@
   <div class="popUp" *ngIf="showActivities">
     <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p>
 
-    <button (click)="test(camp.CampsiteID)">clickMe</button>
-
-
+ 
     <button class="popUp-button" (click)="setShowActivities()">X</button>
   </div>
 
   <p>{{ camp?.CampsiteName }}</p>
+  <button (click)="test(camp.CampsiteID)">clickMe</button>
  
   <p>{{ campsiteIdInfo?.AttributeName }}</p>
 </div>
