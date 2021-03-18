@@ -3,12 +3,40 @@
 <form #filterForm="ngForm" (input)="setSearchTerm(filterForm)">
   <input type="text" placeholder="Search for an item" name="filter" ngModel />
 </form>
+<p>Filter by</p>
 
-<form #addForm="ngForm" (ngSubmit)="addItem(addForm)" >
+<button (click)="showFilteredCampingCategory('Camping')">
+  Camping Essentials
+</button>
+<div *ngIf="onCampsite">
+  <ul>
+    <li *ngFor="let item of showFilteredList('Camping')">
+      <p>{{ item.name }}</p>
+    </li>
+  </ul>
+</div>
+
+<button class="camping-filter" (click)="showFilteredCampingCategory('Kitchen')">
+  Kitchen
+</button>
+<div *ngIf="onKitchen">
+  <ul>
+    <li *ngFor="let item of showFilteredList('Kitchen')">
+      <p>{{ item.name }}</p>
+    </li>
+  </ul>
+</div>
+
+<button class="camping-filter">BBQ</button>
+
+<button class="camping-filter">Firepit</button>
+
+<button class="camping-filter">Electric</button>
+<button class="camping-filter">Bear Necessities</button>
+<form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <label for="name">Add Item</label>
   <ul>
-    <li *ngFor="let item of filter(searchTerm); index as i" >
-    
+    <li *ngFor="let item of filter(searchTerm); index as i">
       <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
         {{ item.name }}
         <button class="delete-btn" (click)="deleteItem(i)">X</button>
@@ -26,27 +54,9 @@
     <option value="Electric">Electric</option>
   </select>
   <button class="add-btn">Add</button>
-
-
-  *ngFor="let item of showFilteredCampingCategory()">
-
-
-  <p>Filter by</p>
-
-  <button (click)="showFilteredCampingCategory('Camping')" > Camping Essentials</button>
-
-  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('Kitchen')">Kitchen</button>
-
-  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('BBQ')">BBQ</button>
-
-  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('Firepit')">Firepit</button>
-
-  <button class="camping-filter" *ngFor="let item of showFilteredCampingCategory('Electric')">Electric</button>
-
-
 </form>
 <button (click)="showDiv(onPacking)">Show My List</button>
-<div class="packing-list" *ngIf="onPacking">
+<div *ngIf="onPacking">
   <ul>
     <li *ngFor="let item of showPackingList()">
       <p>{{ item.name }}</p>

@@ -15,38 +15,49 @@ export class SuppliesComponent implements OnInit {
   onBBQ: boolean = false;
   onFirepit: boolean = false;
   onElectric: boolean = false;
+  onDefault: boolean = false;
 
-  constructor() { }
+  constructor() {}
 
   supplies: Supply[] = [
     {
       name: 'Tent',
-      type: 'Camping ',
+      type: 'Default',
       needed: true,
     },
     {
       name: 'Tarp',
-      type: 'Camping ',
+      type: 'Camping',
       needed: true,
     },
     {
       name: 'Sleeping bag',
-      type: 'Camping ',
+      type: 'Default',
       needed: true,
     },
     {
       name: 'Pillow',
-      type: 'Camping ',
+      type: 'Camping',
       needed: true,
     },
     {
       name: 'Axe',
-      type: 'Camping ',
+      type: 'Camping',
       needed: true,
     },
     {
       name: 'Knife',
-      type: 'Camping',
+      type: 'Default',
+      needed: true,
+    },
+    {
+      name: 'Fishing Pole',
+      type: 'Default',
+      needed: true,
+    },
+    {
+      name: 'Water Jugs',
+      type: 'Default',
       needed: true,
     },
 
@@ -94,7 +105,7 @@ export class SuppliesComponent implements OnInit {
 
   searchTerm: string = '';
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   setSearchTerm = (form: NgForm): void => {
     this.searchTerm = form.form.value.filter;
@@ -115,7 +126,6 @@ export class SuppliesComponent implements OnInit {
     this.supplies.splice(index, 1);
   };
 
-
   addItem = (form: NgForm): void => {
     let newItem: Supply = {
       name: form.form.value.name,
@@ -133,7 +143,6 @@ export class SuppliesComponent implements OnInit {
     item.needed = !item.needed;
   };
 
-
   showDiv = (onPacking: boolean): void => {
     this.onPacking = !this.onPacking;
   };
@@ -143,27 +152,26 @@ export class SuppliesComponent implements OnInit {
     });
   };
 
-
-
-
-
-  showFilteredCampingCategory = (type: string): Supply[] => {
+  showFilteredCampingCategory = (type: string): void => {
+    // return this.supplies.filter((item) => {
+    // item.type === type;
+    if (type === 'Camping') {
+      this.onCampsite = !this.onCampsite;
+    } else if (type === 'Kitchen') {
+      this.onKitchen = !this.onKitchen;
+    } else if (type === 'BBQ') {
+      this.onBBQ = !this.onBBQ;
+    } else if (type === 'Firepit') {
+      this.onFirepit = !this.onFirepit;
+    } else if (type === 'Electric') {
+      this.onElectric = !this.onElectric;
+    } else if (type === 'Default') {
+      this.onDefault = !this.onDefault;
+    }
+  };
+  showFilteredList = (type: string): Supply[] => {
     return this.supplies.filter((item) => {
       return item.type === type;
-      if (type === 'Camping') {
-        this.onCampsite = !this.onCampsite;
-      } else if (type === 'Kitchen') {
-        this.onKitchen = !this.onKitchen;
-      } else if (type === 'BBQ') {
-        this.onBBQ = !this.onBBQ;
-      } else if (type === 'Firepit') {
-        this.onFirepit = !this.onFirepit;
-      } else if (type === 'Electric') {
-        this.onElectric = !this.onElectric;
-      }
-
     });
   };
-
-
 }

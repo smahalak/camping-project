@@ -2,9 +2,7 @@
   <p>{{ stateObjectRef?.FacilityID }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
   <p>{{ stateObjectRef?.FacilityName }}</p>
-  <p (click)="emitShowDetailEvent(stateObjectRef); setShowDetails()">
-    Show activities
-  </p>
+  <p (click)="emitShowDetailEvent(stateObjectRef)">Show activities</p>
 </div>
 
 <!-- loops through campsiteID -->
@@ -16,8 +14,11 @@
     </button>
     <div class="popUp" *ngIf="showActivities">
       <!-- <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p> -->
-      <div *ngFor="let item of campsiteArray">
-        <p>{{ item.AttributeName }}</p>
+      <div *ngFor="let item of campsiteAttributeArray">
+        <ul>
+          <!-- <li>{{ item.AttributeName }}</li> -->
+          <li>Test!</li>
+        </ul>
       </div>
       <button class="popUp-button" (click)="setShowActivities()">X</button>
     </div>
@@ -25,4 +26,5 @@
 
   <!-- <p>{{ campsiteIdInfo?.AttributeName }}</p> -->
 </div>
+
 <!-- <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p> -->
