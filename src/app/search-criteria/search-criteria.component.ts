@@ -12,18 +12,14 @@ export class SearchCriteriaComponent implements OnInit {
   states: string[] = [
     'AL',
     'AK',
-    'AS',
     'AZ',
     'AR',
     'CA',
     'CO',
     'CT',
     'DE',
-    'DC',
-    'FM',
     'FL',
     'GA',
-    'GU',
     'HI',
     'ID',
     'IL',
@@ -49,11 +45,9 @@ export class SearchCriteriaComponent implements OnInit {
     'NY',
     'NC',
     'ND',
-    'MP',
     'OH',
     'OK',
     'OR',
-    'PW',
     'PA',
     'PR',
     'RI',
@@ -63,7 +57,6 @@ export class SearchCriteriaComponent implements OnInit {
     'TX',
     'UT',
     'VT',
-    'VI',
     'VA',
     'WA',
     'WV',
@@ -71,9 +64,9 @@ export class SearchCriteriaComponent implements OnInit {
     'WY',
   ];
 
-  constructor(private campingService: CampingServiceService) {}
+  constructor(private campingService: CampingServiceService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
   emitStateSearch = (form: NgForm): void => {
     console.log(form);
     this.searchStateEvent.emit(form.form.value.state);

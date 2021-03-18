@@ -22,9 +22,9 @@ export class CampsiteComponent implements OnInit {
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   emitShowDetailEvent = (stateObjectRef: any) => {
     this.showDetailEvent.emit(stateObjectRef);
@@ -40,11 +40,7 @@ export class CampsiteComponent implements OnInit {
     this.showActivities = !this.showActivities;
     console.log(this.showActivities);
   };
-  //setShowCampsiteId = (): void => {
-  //this.showCampsite = !this.showCampsite;
 
-  // console.log(this.showDetails);
-  //};
   test = (id: string) => {
     this.emitCampsiteIdEvent(id);
   };

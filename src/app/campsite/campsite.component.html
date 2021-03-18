@@ -1,24 +1,25 @@
 <div class="test-border">
-  <!-- <p>{{ stateRef }}</p> -->
   <p>{{ stateObjectRef?.FacilityID }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
   <p>{{ stateObjectRef?.FacilityName }}</p>
-  <p
-    (click)="
-      emitShowDetailEvent(stateObjectRef); setShowDetails(); setShowActivities()
-    "
-  >
+  <p (click)=" emitShowDetailEvent(stateObjectRef); setShowDetails(); setShowActivities() ">
     Show activities
   </p>
 </div>
+
+<!-- loops through campsiteID -->
 <div *ngFor="let camp of campsiteArray">
   <div *ngIf="showDetails"></div>
   <div class="popUp" *ngIf="showActivities">
     <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p>
+
+    <button (click)="test(camp.CampsiteID)">clickMe</button>
+
+
     <button class="popUp-button" (click)="setShowActivities()">X</button>
   </div>
 
   <p>{{ camp?.CampsiteName }}</p>
-  <!-- <button (click)="test(camp.CampsiteID)">clickMe</button> -->
+ 
   <p>{{ campsiteIdInfo?.AttributeName }}</p>
 </div>
