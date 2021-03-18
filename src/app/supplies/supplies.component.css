@@ -1,3 +1,27 @@
 .dontAdd {
   text-decoration: line-through;
 }
+
+.kitchen-filter {
+  border: solid blue 1px;
+}
+
+.BBQ-filter {
+  border: solid rgba(207, 44, 44, 0.651) 1px;
+}
+
+.onFirepit {
+  border: solid rgb(235, 194, 11) 1px;
+}
+
+.Camping-filter {
+  border: solid green 1px;
+}
+
+.Default-filter { 
+  border: solid purple 1px;
+}
+
+.Electric-filter {
+  border: solid gold 1px;
+}
