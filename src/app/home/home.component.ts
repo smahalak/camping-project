@@ -19,12 +19,13 @@ export class HomeComponent implements OnInit {
   facilityArray: any[];
   campsiteIdInfo: any;
   campsiteAttributesArray: any[];
+  showActivities: boolean = false;
 
   constructor(
     private campService: CampingServiceService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     //takes queryparm from onStateSearch and if State is selected grabs state data from service with state as a queryparm
@@ -70,7 +71,7 @@ export class HomeComponent implements OnInit {
       console.log(campsiteId);
       //filter method on response
       this.campsiteAttributesArray = response.RECDATA;
-
+      this.setShowActivities();
       console.log(this.campsiteAttributesArray);
     });
   };
@@ -83,4 +84,11 @@ export class HomeComponent implements OnInit {
       },
     });
   };
+
+
+  setShowActivities = (): void => {
+    this.showActivities = !this.showActivities;
+    console.log(this.showActivities);
+  };
+
 }
