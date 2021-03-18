@@ -2,30 +2,27 @@
   <p>{{ stateObjectRef?.FacilityID }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
   <p>{{ stateObjectRef?.FacilityName }}</p>
-  <p
-    (click)="
-      emitShowDetailEvent(stateObjectRef); setShowDetails(); setShowActivities()
-    "
-  >
+  <p (click)="emitShowDetailEvent(stateObjectRef); setShowDetails()">
     Show activities
   </p>
 </div>
 
 <!-- loops through campsiteID -->
 <div *ngFor="let camp of campsiteArray">
-  <div *ngIf="showDetails"></div>
-  <div class="popUp" *ngIf="showActivities">
-    <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p>
-
-    <button class="popUp-button" (click)="setShowActivities()">X</button>
+  <div *ngIf="showDetails">
+    <p>{{ camp?.CampsiteName }}</p>
+    <button (click)="test(camp.CampsiteID); setShowActivities()">
+      clickMe
+    </button>
+    <div class="popUp" *ngIf="showActivities">
+      <!-- <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p> -->
+      <div *ngFor="let item of campsiteArray">
+        <p>{{ item.AttributeName }}</p>
+      </div>
+      <button class="popUp-button" (click)="setShowActivities()">X</button>
+    </div>
   </div>
-
-  <p>{{ camp?.CampsiteName }}</p>
-  <button (click)="test(camp.CampsiteID)">clickMe</button>
 
   <!-- <p>{{ campsiteIdInfo?.AttributeName }}</p> -->
 </div>
 <!-- <p (click)="emitCampsiteIdEvent(camp?.CampsiteID)">Attribute show here!</p> -->
-<div *ngFor="let item of campsiteArray">
-  <p>{{ item.AttributeName }}</p>
-</div>
