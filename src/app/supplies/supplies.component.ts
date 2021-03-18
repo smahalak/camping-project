@@ -10,14 +10,14 @@ import { Supply } from '../interfaces/supply';
 export class SuppliesComponent implements OnInit {
   onPacking: boolean = false;
 
-  onCampsite: boolean = false;
+  onCamping: boolean = false;
   onKitchen: boolean = false;
   onBBQ: boolean = false;
   onFirepit: boolean = false;
   onElectric: boolean = false;
   onDefault: boolean = false;
 
-  constructor() {}
+  constructor() { }
 
   supplies: Supply[] = [
     {
@@ -105,7 +105,7 @@ export class SuppliesComponent implements OnInit {
 
   searchTerm: string = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   setSearchTerm = (form: NgForm): void => {
     this.searchTerm = form.form.value.filter;
@@ -156,7 +156,7 @@ export class SuppliesComponent implements OnInit {
     // return this.supplies.filter((item) => {
     // item.type === type;
     if (type === 'Camping') {
-      this.onCampsite = !this.onCampsite;
+      this.onCamping = !this.onCamping;
     } else if (type === 'Kitchen') {
       this.onKitchen = !this.onKitchen;
     } else if (type === 'BBQ') {

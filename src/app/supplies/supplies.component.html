@@ -5,44 +5,103 @@
 </form>
 <p>Filter by</p>
 
-<button (click)="showFilteredCampingCategory('Camping')">
-  Camping Essentials
-</button>
-<div *ngIf="onCampsite">
-  <ul>
-    <li *ngFor="let item of showFilteredList('Camping')">
-      <p>{{ item.name }}</p>
-    </li>
-  </ul>
-</div>
 
-<button class="camping-filter" (click)="showFilteredCampingCategory('Kitchen')">
-  Kitchen
-</button>
-<div *ngIf="onKitchen">
-  <ul>
-    <li *ngFor="let item of showFilteredList('Kitchen')">
-      <p>{{ item.name }}</p>
-    </li>
-  </ul>
-</div>
 
-<button class="camping-filter">BBQ</button>
 
-<button class="camping-filter">Firepit</button>
 
-<button class="camping-filter">Electric</button>
-<button class="camping-filter">Bear Necessities</button>
 <form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
-  <label for="name">Add Item</label>
-  <ul>
+
+
+  <button  (click)="showFilteredCampingCategory('Kitchen')">
+    Kitchen
+  </button>
+  <div *ngIf="onKitchen">
+    <h3>Kichen Supplies</h3>
+    <ul class="kitchen-filter">
+      <li *ngFor="let item of showFilteredList('Kitchen'); index as i ">
+        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      </li>
+    </ul>
+  </div>
+
+  <button  (click)="showFilteredCampingCategory('BBQ')">
+    BBQ
+  </button>
+  <div *ngIf="onBBQ">
+    <h3>BBQ Supplies</h3>
+    <ul class="BBQ-filter">
+      <li *ngFor="let item of showFilteredList('BBQ'); index as i ">
+        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      </li>
+    </ul>
+  </div>
+
+  <button  (click)="showFilteredCampingCategory('Firepit')">
+    Firepit
+  </button>
+  <div *ngIf="onFirepit">
+    <h3>Firepit Essentials</h3>
+    <ul class="Firepit-filter">
+      <li *ngFor="let item of showFilteredList('Firepit'); index as i ">
+        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}   </p>
+      </li>
+    </ul>
+  </div>
+
+  <button  (click)="showFilteredCampingCategory('Camping')">
+    Campsite Supplies
+  </button>
+  <div *ngIf="onCamping">
+    <h3>Campsite Supplies</h3>
+    <ul class="Camping-filter">
+      <li *ngFor="let item of showFilteredList('Camping'); index as i ">
+        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      </li>
+    </ul>
+  </div>
+
+  <button  (click)="showFilteredCampingCategory('Default')">
+    Bear Necessities
+  </button>
+  <div *ngIf="onDefault">
+    <h3>Bear Necessities</h3>
+    <ul class="Default-filter">
+      <li *ngFor="let item of showFilteredList('Default'); index as i ">
+        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      </li>
+    </ul>
+  </div>
+
+  <button  (click)="showFilteredCampingCategory('Electric')">
+    Electrical Supplies
+  </button>
+  <div *ngIf="onElectric">
+    <h3>Electrical Supplies</h3>
+    <ul class="Electric-filter">
+      <li *ngFor="let item of showFilteredList('Electric'); index as i ">
+        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)" >{{ item.name }} </p>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+
+
+
+
+  <!-- <ul>
     <li *ngFor="let item of filter(searchTerm); index as i">
       <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
         {{ item.name }}
         <button class="delete-btn" (click)="deleteItem(i)">X</button>
       </p>
     </li>
-  </ul>
+  </ul> -->
+
+
+
   <label for="name">Add an Item </label>
   <input type="text" placeholder="Add an item" name="name" id="name" ngModel />
   <label for="type">Item Type</label>
