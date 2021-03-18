@@ -18,7 +18,7 @@ export class CampingServiceService {
 
   selectStateName: string;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getCampingState = (state: string): any => {
     let params: any = {
@@ -43,7 +43,7 @@ export class CampingServiceService {
   };
   getSelectedCampsiteId = (campsiteId: string): any => {
     let params: any = {
-      limit: '30',
+      limit: '50',
       apikey: this.apiKey,
     };
     this.campingSitesURL =
