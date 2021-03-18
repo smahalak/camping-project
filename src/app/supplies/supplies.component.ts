@@ -10,42 +10,43 @@ import { Supply } from '../interfaces/supply';
 export class SuppliesComponent implements OnInit {
   onPacking: boolean = false;
 
-  constructor() {}
+  onCampsite: boolean = false;
+  onKitchen: boolean = false;
+  onBBQ: boolean = false;
+  onFirepit: boolean = false;
+  onElectric: boolean = false;
+
+  constructor() { }
 
   supplies: Supply[] = [
     {
       name: 'Tent',
-      type: 'Campsite',
+      type: 'Camping ',
       needed: true,
     },
     {
       name: 'Tarp',
-      type: 'Campsite',
+      type: 'Camping ',
       needed: true,
     },
     {
       name: 'Sleeping bag',
-      type: 'Campsite',
+      type: 'Camping ',
       needed: true,
     },
     {
       name: 'Pillow',
-      type: 'Campsite',
+      type: 'Camping ',
       needed: true,
     },
     {
       name: 'Axe',
-      type: 'Tools',
+      type: 'Camping ',
       needed: true,
     },
     {
       name: 'Knife',
-      type: 'Tools',
-      needed: true,
-    },
-    {
-      name: 'Tent',
-      type: 'Campsite',
+      type: 'Camping',
       needed: true,
     },
 
@@ -93,7 +94,7 @@ export class SuppliesComponent implements OnInit {
 
   searchTerm: string = '';
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   setSearchTerm = (form: NgForm): void => {
     this.searchTerm = form.form.value.filter;
@@ -113,14 +114,7 @@ export class SuppliesComponent implements OnInit {
   deleteItem = (index: number): void => {
     this.supplies.splice(index, 1);
   };
-  showDiv = (onPacking: boolean): void => {
-    this.onPacking = !this.onPacking;
-  };
-  showPackingList = (): Supply[] => {
-    return this.supplies.filter((item) => {
-      return item.needed === true;
-    });
-  };
+
 
   addItem = (form: NgForm): void => {
     let newItem: Supply = {
@@ -138,4 +132,38 @@ export class SuppliesComponent implements OnInit {
   neededItem = (item: Supply): void => {
     item.needed = !item.needed;
   };
+
+
+  showDiv = (onPacking: boolean): void => {
+    this.onPacking = !this.onPacking;
+  };
+  showPackingList = (): Supply[] => {
+    return this.supplies.filter((item) => {
+      return item.needed === true;
+    });
+  };
+
+
+
+
+
+  showFilteredCampingCategory = (type: string): Supply[] => {
+    return this.supplies.filter((item) => {
+      return item.type === type;
+      if (type === 'Camping') {
+        this.onCampsite = !this.onCampsite;
+      } else if (type === 'Kitchen') {
+        this.onKitchen = !this.onKitchen;
+      } else if (type === 'BBQ') {
+        this.onBBQ = !this.onBBQ;
+      } else if (type === 'Firepit') {
+        this.onFirepit = !this.onFirepit;
+      } else if (type === 'Electric') {
+        this.onElectric = !this.onElectric;
+      }
+
+    });
+  };
+
+
 }
