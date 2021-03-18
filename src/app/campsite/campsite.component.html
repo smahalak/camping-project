@@ -5,13 +5,14 @@
  
   <p>{{ stateObjectRef?.FacilityName }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
-  <p (click)="emitShowDetailEvent(stateObjectRef)">Click to see available campsites!</p>
+  <button (click)="emitShowDetailEvent(stateObjectRef)">Click to see available campsites!</button>
 </div>
 
 <!-- loops through campsiteID -->
 <div *ngFor="let camp of campsiteArray">
   <div *ngIf="showDetails">
-    <p>{{ camp?.CampsiteName }}</p>
+    
+    <p>Campsite Name {{ camp?.CampsiteName }}</p>
     <button (click)="test(camp.CampsiteID); ">
       See camping guide
     </button>

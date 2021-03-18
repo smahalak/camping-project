@@ -21,6 +21,8 @@ export class HomeComponent implements OnInit {
   campsiteAttributesArray: any[];
   showActivities: boolean = false;
 
+
+
   constructor(
     private campService: CampingServiceService,
     private route: ActivatedRoute,
@@ -76,6 +78,18 @@ export class HomeComponent implements OnInit {
     });
   };
 
+  setShowActivities = (): void => {
+    this.showActivities = !this.showActivities;
+    console.log(this.showActivities);
+  };
+
+  findAttributes = (campsiteAttributesArray: any, type: string): boolean => {
+    return campsiteAttributesArray.some((item) => {
+      return item.AttributeName === type;
+    })
+  }
+
+
   //looks at search-criteria form that was submitted and stores result in query parm which is used onit
   onStateSearch = (state: string) => {
     this.router.navigate(['/home'], {
@@ -86,9 +100,6 @@ export class HomeComponent implements OnInit {
   };
 
 
-  setShowActivities = (): void => {
-    this.showActivities = !this.showActivities;
-    console.log(this.showActivities);
-  };
+
 
 }
