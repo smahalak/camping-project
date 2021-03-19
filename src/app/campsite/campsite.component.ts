@@ -19,13 +19,12 @@ export class CampsiteComponent implements OnInit {
   showDetails: boolean = false;
   showCampsite: boolean = false;
 
-
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   emitShowDetailEvent = (stateObjectRef: any) => {
     this.showDetailEvent.emit(stateObjectRef);
@@ -38,7 +37,6 @@ export class CampsiteComponent implements OnInit {
   setShowDetails = (): void => {
     this.showDetails = !this.showDetails;
   };
-
 
   test = (id: string) => {
     this.emitCampsiteIdEvent(id);

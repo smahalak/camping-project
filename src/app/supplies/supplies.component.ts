@@ -15,9 +15,9 @@ export class SuppliesComponent implements OnInit {
   onBBQ: boolean = false;
   onFirepit: boolean = false;
   onElectric: boolean = false;
-  onDefault: boolean = false;
+  onDefault: boolean = true;
 
-  constructor() { }
+  constructor() {}
 
   supplies: Supply[] = [
     {
@@ -105,7 +105,9 @@ export class SuppliesComponent implements OnInit {
 
   searchTerm: string = '';
 
-  ngOnInit(): void { }
+  ngOnInit(): void {
+    this.showFilteredList('Default');
+  }
 
   setSearchTerm = (form: NgForm): void => {
     this.searchTerm = form.form.value.filter;
