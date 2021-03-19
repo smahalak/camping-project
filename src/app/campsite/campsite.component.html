@@ -1,22 +1,26 @@
-
 <!-- Displays the Camp Facility Name and phone number -->
 <div class="test-border">
-  
- 
   <p>{{ stateObjectRef?.FacilityName }}</p>
   <p>{{ stateObjectRef?.FacilityPhone }}</p>
-  <button (click)="emitShowDetailEvent(stateObjectRef)">Click to see available campsites!</button>
+  <button (click)="emitShowDetailEvent(stateObjectRef)">
+    Click to see available campsites!
+  </button>
 </div>
 
 <!-- loops through campsiteID -->
-<div *ngFor="let camp of campsiteArray">
-  <div *ngIf="showDetails">
-    
+<div *ngIf="showDetails">
+  <div *ngFor="let camp of campsiteArray">
+    <!-- Provides campsite names -->
     <p>Campsite Name {{ camp?.CampsiteName }}</p>
-    <button (click)="test(camp.CampsiteID); ">
-      See camping guide
-    </button>
-  
-  </div>
+    <p>Campsite Type {{ camp?.CampsiteType }}</p>
 
+    <div *ngFor="let equipment of camp.PERMITTEDEQUIPMENT">
+      <p>{{ equipment.EquipmentName }}</p>
+    </div>
+
+    <button (click)="test(camp.CampsiteID)">See camping guide</button>
+  </div>
+  <div *ngIf="campsiteArray.length === 0">
+    <p>No campsite Info</p>
+  </div>
 </div>

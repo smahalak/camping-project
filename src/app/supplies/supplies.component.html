@@ -1,95 +1,88 @@
 <h2>Supply List</h2>
 
-<form #filterForm="ngForm" (input)="setSearchTerm(filterForm)">
-  <input type="text" placeholder="Search for an item" name="filter" ngModel />
-</form>
-<p>Filter by</p>
-
-
-
-
+<!-- <form #filterForm="ngForm" (input)="setSearchTerm(filterForm)"> -->
+<!-- <input type="text" placeholder="Search for an item" name="filter" ngModel /> -->
+<!-- </form> -->
+<!-- <p>Filter by</p> -->
 
 <form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
-
-
-  <button  (click)="showFilteredCampingCategory('Kitchen')">
-    Kitchen
+  <button (click)="showFilteredCampingCategory('Kitchen')">Kitchen</button>
+  <button (click)="showFilteredCampingCategory('BBQ')">BBQ</button>
+  <button (click)="showFilteredCampingCategory('Firepit')">Firepit</button>
+  <button (click)="showFilteredCampingCategory('Camping')">
+    Campsite Supplies
+  </button>
+  <button (click)="showFilteredCampingCategory('Default')">
+    Bear Necessities
+  </button>
+  <button (click)="showFilteredCampingCategory('Electric')">
+    Electrical Supplies
   </button>
   <div *ngIf="onKitchen">
     <h3>Kichen Supplies</h3>
     <ul class="kitchen-filter">
-      <li *ngFor="let item of showFilteredList('Kitchen'); index as i ">
-        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      <li *ngFor="let item of showFilteredList('Kitchen'); index as i">
+        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+          {{ item.name }}
+        </p>
       </li>
     </ul>
   </div>
 
-  <button  (click)="showFilteredCampingCategory('BBQ')">
-    BBQ
-  </button>
   <div *ngIf="onBBQ">
     <h3>BBQ Supplies</h3>
     <ul class="BBQ-filter">
-      <li *ngFor="let item of showFilteredList('BBQ'); index as i ">
-        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      <li *ngFor="let item of showFilteredList('BBQ'); index as i">
+        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+          {{ item.name }}
+        </p>
       </li>
     </ul>
   </div>
 
-  <button  (click)="showFilteredCampingCategory('Firepit')">
-    Firepit
-  </button>
   <div *ngIf="onFirepit">
     <h3>Firepit Essentials</h3>
     <ul class="Firepit-filter">
-      <li *ngFor="let item of showFilteredList('Firepit'); index as i ">
-        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}   </p>
+      <li *ngFor="let item of showFilteredList('Firepit'); index as i">
+        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+          {{ item.name }}
+        </p>
       </li>
     </ul>
   </div>
 
-  <button  (click)="showFilteredCampingCategory('Camping')">
-    Campsite Supplies
-  </button>
   <div *ngIf="onCamping">
     <h3>Campsite Supplies</h3>
     <ul class="Camping-filter">
-      <li *ngFor="let item of showFilteredList('Camping'); index as i ">
-        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      <li *ngFor="let item of showFilteredList('Camping'); index as i">
+        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+          {{ item.name }}
+        </p>
       </li>
     </ul>
   </div>
 
-  <button  (click)="showFilteredCampingCategory('Default')">
-    Bear Necessities
-  </button>
   <div *ngIf="onDefault">
     <h3>Bear Necessities</h3>
     <ul class="Default-filter">
-      <li *ngFor="let item of showFilteredList('Default'); index as i ">
-        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)"  >{{ item.name }}  </p>
+      <li *ngFor="let item of showFilteredList('Default'); index as i">
+        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+          {{ item.name }}
+        </p>
       </li>
     </ul>
   </div>
 
-  <button  (click)="showFilteredCampingCategory('Electric')">
-    Electrical Supplies
-  </button>
   <div *ngIf="onElectric">
     <h3>Electrical Supplies</h3>
     <ul class="Electric-filter">
-      <li *ngFor="let item of showFilteredList('Electric'); index as i ">
-        <p  [ngClass]="{ dontAdd: !item.needed }"  (click)="neededItem(item)" >{{ item.name }} </p>
+      <li *ngFor="let item of showFilteredList('Electric'); index as i">
+        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+          {{ item.name }}
+        </p>
       </li>
     </ul>
   </div>
-
-
-
-
-
-
-
 
   <!-- <ul>
     <li *ngFor="let item of filter(searchTerm); index as i">
@@ -99,8 +92,6 @@
       </p>
     </li>
   </ul> -->
-
-
 
   <label for="name">Add an Item </label>
   <input type="text" placeholder="Add an item" name="name" id="name" ngModel />

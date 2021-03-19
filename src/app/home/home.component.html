@@ -1,4 +1,3 @@
-
 <app-search-criteria
   (searchStateEvent)="onStateSearch($event); getCampingFacilities($event)"
 ></app-search-criteria>
@@ -11,33 +10,45 @@
 >
 </app-campsite>
 
-
 <div class="popUp popUpParent" *ngIf="showActivities">
+  <p
+    *ngIf="findAttributes(campsiteAttributesArray, 'BBQ')"
+    routerLink="/supplies"
+  >
+    Show BBQ logo
+  </p>
 
+  <p
+    *ngIf="findAttributes(campsiteAttributesArray, 'Grills')"
+    routerLink="/supplies"
+  >
+    Show Grills logo
+  </p>
 
-  <p *ngIf="findAttributes(campsiteAttributesArray, 'BBQ')" routerLink="/supplies" >Show BBQ logo</p>
+  <p
+    *ngIf="findAttributes(campsiteAttributesArray, 'Campfire Allowed')"
+    routerLink="/supplies"
+  >
+    Show Campfire logo
+  </p>
 
-  <p *ngIf="findAttributes(campsiteAttributesArray, 'Grills')" routerLink="/supplies" >Show Grills logo</p>
+  <p
+    *ngIf="findAttributes(campsiteAttributesArray, 'Electricity Hookup')"
+    routerLink="/supplies"
+  >
+    Show Electricity logo
+  </p>
 
-  <p *ngIf="findAttributes(campsiteAttributesArray, 'Campfire Allowed')" routerLink="/supplies" >Show Campfire logo</p>
-
-  <p *ngIf="findAttributes(campsiteAttributesArray, 'Electricity Hookup')" routerLink="/supplies" >Show Electricity logo</p>
-
-  <p *ngIf="findAttributes(campsiteAttributesArray, 'Pets Allowed')" >Show Pets logo</p>
-
+  <p *ngIf="findAttributes(campsiteAttributesArray, 'Pets Allowed')">
+    Show Pets logo
+  </p>
 
   <!-- Displaying the Attributes on the Pop Up -->
-    <!-- <div  class="attributeText" *ngFor="let item of campsiteAttributesArray">
+  <!-- <div  class="attributeText" *ngFor="let item of campsiteAttributesArray">
       <ul>
       <li>{{ item.AttributeName }}: {{ item.AttributeValue }}</li>
     </ul>
     </div> -->
 
-  
-   
-    
- 
   <button class="popUp-button" (click)="setShowActivities()">X</button>
 </div>
-
-
