@@ -20,7 +20,7 @@ export class CampingServiceService {
 
   watchList: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getCampingState = (state: string): any => {
     let params: any = {
@@ -64,15 +64,13 @@ export class CampingServiceService {
     });
   };
 
-
-
   getWatchList = (): any => {
     return this.watchList;
-  }
+  };
 
   toggleWatchList = (campsiteName: any) => {
     let index = this.watchList.findIndex((item) => {
-      return campsiteName.CampsiteID === campsiteName.CampsiteID;
+      return item.CampsiteID === campsiteName.CampsiteID;
     });
     if (index === -1) {
       this.watchList.push(campsiteName);
@@ -80,8 +78,6 @@ export class CampingServiceService {
       this.watchList.splice(index, 1);
     }
 
-
     console.log(this.watchList);
-  }
-
+  };
 }
