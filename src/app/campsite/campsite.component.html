@@ -11,7 +11,11 @@
 <div *ngIf="showDetails">
   <div *ngFor="let camp of campsiteArray">
     <!-- Provides campsite names -->
-    <p>Campsite Name {{ camp?.CampsiteName }} <span>ADD TO WATCHLIST </span></p>
+    <p>Campsite Name {{ camp?.CampsiteName }} <span (click)="emitWatchListEvent(camp)" 
+      [ngClass]="{ watchLater: checkWatchList(camp) }"
+      >ADD TO WATCHLIST </span></p>
+
+
     <p>Campsite Type {{ camp?.CampsiteType }}</p>
     <!-- <div *ngFor="let attribute of camp.ATTRIBUTES"> -->
     <!-- <p>{{ attribute.AttributeName }}</p> -->

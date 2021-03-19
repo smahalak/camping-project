@@ -18,6 +18,8 @@ export class CampingServiceService {
 
   selectStateName: string;
 
+  watchList: any[] = [];
+
   constructor(private http: HttpClient) { }
 
   getCampingState = (state: string): any => {
@@ -61,4 +63,25 @@ export class CampingServiceService {
       },
     });
   };
+
+
+
+  getWatchList = (): any => {
+    return this.watchList;
+  }
+
+  toggleWatchList = (campsiteName: any) => {
+    let index = this.watchList.findIndex((item) => {
+      return campsiteName.CampsiteID === campsiteName.CampsiteID;
+    });
+    if (index === -1) {
+      this.watchList.push(campsiteName);
+    } else {
+      this.watchList.splice(index, 1);
+    }
+
+
+    console.log(this.watchList);
+  }
+
 }
