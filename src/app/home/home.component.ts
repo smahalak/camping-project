@@ -74,7 +74,7 @@ export class HomeComponent implements OnInit {
       this.campsiteAttributesArray = response.RECDATA;
       this.setShowActivities();
       // array contains attribute after clicking popup.
-      console.log(this.campsiteAttributesArray);
+      // console.log(this.campsiteAttributesArray);
     });
   };
 
