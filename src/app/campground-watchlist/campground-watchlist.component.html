@@ -1,1 +1,9 @@
 <p>campground-watchlist works!</p>
+<ul>
+    <app-campsite
+    *ngFor="let camp of watchList"
+    [favoriteRef]="camp"
+    (watchListEvent)="onWatch($event)"
+    [watchListRef]="watchList"
+    ></app-campsite>
+</ul>

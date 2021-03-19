@@ -14,6 +14,12 @@ export class CampsiteComponent implements OnInit {
 
   @Output() showDetailEvent = new EventEmitter<any>();
   @Output() showCampsiteIdEvent = new EventEmitter<string>();
+
+
+  @Input() watchListRef: any = [];
+  @Input() favoriteRef: any
+  @Output() watchListEvent = new EventEmitter<any>()
+
   stateName: string;
   states: any;
   showDetails: boolean = false;
@@ -22,9 +28,9 @@ export class CampsiteComponent implements OnInit {
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   emitShowDetailEvent = (stateObjectRef: any) => {
     this.showDetailEvent.emit(stateObjectRef);
@@ -41,4 +47,21 @@ export class CampsiteComponent implements OnInit {
   test = (id: string) => {
     this.emitCampsiteIdEvent(id);
   };
+
+
+
+  emitWatchListEvent = (campsiteName: any): void => {
+    this.watchListEvent.emit(campsiteName);
+  }
+
+  checkWatchList = (campsiteName: any): boolean => {
+    console.log(campsiteName);
+
+    return this.watchListRef.some((item) => {
+      return item.CampsiteID === campsiteName.CampsiteID;
+    })
+  }
+
+
+
 }

@@ -7,6 +7,9 @@
   (showDetailEvent)="getAttributes($event)"
   (showCampsiteIdEvent)="getCampsiteId($event)"
   [campsiteArray]="campsiteIdInfo"
+
+  (watchListEvent)="onWatch($event)"
+  [watchListRef]="watchList"
 >
 </app-campsite>
 

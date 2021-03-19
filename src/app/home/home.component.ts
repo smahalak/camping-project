@@ -21,11 +21,14 @@ export class HomeComponent implements OnInit {
   campsiteAttributesArray: any[];
   showActivities: boolean = false;
 
+
+  watchList: any = []
+
   constructor(
     private campService: CampingServiceService,
     private route: ActivatedRoute,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     //takes queryparm from onStateSearch and if State is selected grabs state data from service with state as a queryparm
@@ -37,6 +40,10 @@ export class HomeComponent implements OnInit {
         this.getAttributes(state);
       }
     });
+
+
+    this.getAndSetWatchList();
+
   }
 
   getCampingFacilities = (state: string) => {
@@ -97,4 +104,19 @@ export class HomeComponent implements OnInit {
       },
     });
   };
+
+
+
+  onWatch = (campsiteName: any): void => {
+    console.log('hey   onWatch');
+
+    this.campService.toggleWatchList(campsiteName);
+    this.getAndSetWatchList();
+  }
+
+  getAndSetWatchList = (): void => {
+    console.log('hey getAndSetWatchList ');
+    this.watchList = this.campService.getWatchList();
+  }
+
 }
