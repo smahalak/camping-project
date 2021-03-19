@@ -11,9 +11,11 @@
 <div *ngIf="showDetails">
   <div *ngFor="let camp of campsiteArray">
     <!-- Provides campsite names -->
-    <p>Campsite Name {{ camp?.CampsiteName }}</p>
+    <p>Campsite Name {{ camp?.CampsiteName }} <span>ADD TO WATCHLIST </span></p>
     <p>Campsite Type {{ camp?.CampsiteType }}</p>
-
+    <!-- <div *ngFor="let attribute of camp.ATTRIBUTES"> -->
+    <!-- <p>{{ attribute.AttributeName }}</p> -->
+    <!-- </div> -->
     <div *ngFor="let equipment of camp.PERMITTEDEQUIPMENT">
       <p>{{ equipment.EquipmentName }}</p>
     </div>

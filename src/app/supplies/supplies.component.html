@@ -6,6 +6,14 @@
 <!-- <p>Filter by</p> -->
 
 <form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
+  <button
+    (click)="
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.focus()
+    "
+  >
+    Add new item
+  </button>
   <button (click)="showFilteredCampingCategory('Kitchen')">Kitchen</button>
   <button (click)="showFilteredCampingCategory('BBQ')">BBQ</button>
   <button (click)="showFilteredCampingCategory('Firepit')">Firepit</button>
@@ -94,7 +102,14 @@
   </ul> -->
 
   <label for="name">Add an Item </label>
-  <input type="text" placeholder="Add an item" name="name" id="name" ngModel />
+  <input
+    type="text"
+    placeholder="Add an item"
+    name="name"
+    id="name"
+    #element
+    ngModel
+  />
   <label for="type">Item Type</label>
   <select name="type" id="type" ngModel>
     <option value="Camping">Camping</option>
