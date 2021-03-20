@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-a {
+a  {
   text-decoration: none;
 }
 .recipe-card {
@@ -58,9 +58,43 @@ a {
   border-radius: 5px;
   margin: 20px;
 }
+
+
+
+
+.steak {
+  background-image: url("./steak.jpg");
+}
+
+.ribs {
+  background-image: url("./ribs.jpg");
+}
+
+.kabobs {
+  background-image: url("./kabobs.jpg");
+}
+
+.chicken {
+  background-image: url("./chicken.JPG");
+}
+
+.chili {
+  background-image: url("./chili.jpg");
+}
+
 .corn {
   background-image: url("./campfireCorn.jpg");
 }
+
+.veggie {
+  background-image: url("./veggie.jpg");
+}
+
+.smores {
+  background-image: url("./smores.jpg");
+}
+
+
 .image-sizing {
   height: 300px;
   width: 300px;
