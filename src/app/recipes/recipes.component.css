@@ -7,7 +7,6 @@ a {
   text-decoration: none;
 }
 .recipe-card {
-  margin-top: 1em;
   display: flex;
   max-width: 200px;
 }
@@ -69,16 +68,31 @@ a {
   background-position: center;
   background-size: cover;
 }
-/* .flex-parent {
+.flex-parent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+@media (min-width: 375px) {
+  .flex-parent {
     display: flex;
-  } */
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .flex-child {
+    flex: 1 27%;
+    margin: 1em;
+  }
+}
 @media (min-width: 768px) {
   .flex-parent {
     display: flex;
-    /* flex-direction: row; */
-    /* justify-content: space-around;
-      align-items: space-around;
-      flex-wrap: wrap;
-      margin: 0; */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .flex-child {
+    flex: 1 21%;
+    margin: 1em;
   }
 }

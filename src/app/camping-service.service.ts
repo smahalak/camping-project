@@ -45,7 +45,7 @@ export class CampingServiceService {
   };
   getSelectedCampsiteId = (campsiteId: string): any => {
     let params: any = {
-      limit: '50',
+      limit: '20',
       apikey: this.apiKey,
     };
     this.campingSitesURL =

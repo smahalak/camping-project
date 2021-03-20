@@ -1,13 +1,15 @@
 <!-- Displays the Camp Facility Name and phone number -->
+<div class="campsite-list">
+  <p class="name-text">
+    Name {{ camp?.CampsiteName }}
 
-<p class="name-text">
-  Name {{ camp?.CampsiteName }}
-  <span
-    (click)="emitWatchListEvent(camp)"
-    [ngClass]="{ watchLater: checkWatchList(camp) }"
-    >Favorite
-  </span>
-</p>
+    <i
+      class="far fa-campground"
+      (click)="emitWatchListEvent(camp)"
+      [ngClass]="{ watchLater: checkWatchList(camp) }"
+    ></i>
+  </p>
+</div>
 
 <p class="name-text">Campsite Type {{ camp?.CampsiteType }}</p>
 <!-- <div *ngFor="let attribute of camp.ATTRIBUTES"> -->

@@ -1,0 +1,39 @@
+.campsite-display {
+  font-size: 0.9em;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: contrast(0.5);
+  margin: 4px 7px;
+  padding: 5px 5px;
+  width: 300px;
+  border: 1px solid;
+}
+.facility-name {
+  font-size: 1.2em;
+}
+.facility-phone {
+  backdrop-filter: contrast(0.5);
+  margin: 7px;
+}
+.watchLater {
+  color: red;
+}
+.name-text {
+  text-transform: lowercase;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+}
+.campsites {
+  flex-direction: inherit;
+  font-size: 0.9em;
+}
+.campsite-div {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: brightness(0.5);
+  border: 1px solid;
+  margin: 5px;
+  padding: 5px;
+}
