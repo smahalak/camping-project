@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+.recipe-card {
+  margin-top: 1em;
+  display: flex;
+  max-width: 200px;
+}
+.recipe-container {
+  position: relative;
+}
+.front {
+  transition: 275ms;
+}
+.recipe-title {
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0.5em 0;
+  color: white;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+}
+.back {
+  display: none;
+}
+.see-recipe-btn {
+  font-size: 1.2em;
+  font-weight: bolder;
+  background-color: white;
+  cursor: pointer;
+  border: 0;
+  border-radius: 100vw;
+  padding: 0.3em 0.5em;
+  font-weight: bold;
+}
+.see-recipe-btn:hover {
+  background-color: blue;
+}
+.recipe-container:hover .front {
+  transform: translateY(-15%) scale(0.9); /*shifts poster up*/
+}
+.recipe-container:hover .back {
+  opacity: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column; /*centering the btn*/
+  align-items: center;
+  margin: 2.3em 0;
+}
+.recipe-container {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 5px;
+  margin: 20px;
+}
+.corn {
+  background-image: url("./campfireCorn.jpg");
+}
+.image-sizing {
+  height: 300px;
+  width: 300px;
+  border-radius: 5px;
+  background-position: center;
+  background-size: cover;
+}
+/* .flex-parent {
+    display: flex;
+  } */
+@media (min-width: 768px) {
+  .flex-parent {
+    display: flex;
+    /* flex-direction: row; */
+    /* justify-content: space-around;
+      align-items: space-around;
+      flex-wrap: wrap;
+      margin: 0; */
+  }
+}

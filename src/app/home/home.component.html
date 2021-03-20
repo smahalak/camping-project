@@ -2,7 +2,7 @@
   (searchStateEvent)="onStateSearch($event); getCampingFacilities($event)"
 ></app-search-criteria>
 <div class="campsite-container">
-  <app-campsite
+  <app-facility
     *ngFor="let stateObject of stateFacilityInfo?.RECDATA"
     [stateObjectRef]="stateObject"
     (showDetailEvent)="getAttributes($event)"
@@ -11,7 +11,7 @@
     (watchListEvent)="onWatch($event)"
     [watchListRef]="watchList"
   >
-  </app-campsite>
+  </app-facility>
 </div>
 <div class="popUp popUpParent" *ngIf="showActivities">
   <p
