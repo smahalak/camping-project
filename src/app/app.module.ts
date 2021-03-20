@@ -16,6 +16,7 @@ import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { AddSuppliesComponent } from './add-supplies/add-supplies.component';
 import { SuppliesdivComponent } from './suppliesdiv/suppliesdiv.component';
 import { CampgroundWatchlistComponent } from './campground-watchlist/campground-watchlist.component';
+import { FacilityComponent } from './facility/facility.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { CampgroundWatchlistComponent } from './campground-watchlist/campground-
     AddSuppliesComponent,
     SuppliesdivComponent,
     CampgroundWatchlistComponent,
+    FacilityComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
