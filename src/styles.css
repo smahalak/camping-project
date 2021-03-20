@@ -1,5 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 
+h1,
+h2,
+h3,
+p,
+ul,
+a,
+button,
 body {
-    background-color: lightslategrey;
+  font-family: "Rubik", sans-serif;
+  margin: 0px;
+  padding: 0px;
+  color: white;
+}
+body {
+  background-image: url(src\assets\camping-background-image1.jpg);
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+}
+html {
+  height: 100%;
+}
+.btn {
+  border: none;
+  background-color: beige;
+  color: black;
+  padding: 7px;
+  margin: 10px;
+  border-radius: 15px;
 }

@@ -1,0 +1,28 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+}
+.formStyle {
+  align-items: center;
+}
+.input-bar {
+  box-sizing: border-box;
+  padding: 10px 10px 10px 30px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+}
+.select-div {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 5px 10px;
+  justify-content: space-between;
+}
+.state {
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+  margin-left: 5px;
+  width: 50%;
+}
