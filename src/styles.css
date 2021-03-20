@@ -14,12 +14,13 @@ body {
   color: white;
 }
 body {
+  /* background: linear-gradient(to right, #b7e778, #7de5ff); */
   background-image: url(src\assets\camping-background-image1.jpg);
   background-repeat: no-repeat, repeat;
   background-size: cover;
 }
 html {
-  height: 100%;
+  /* height: 100%; */
 }
 .btn {
   border: none;
