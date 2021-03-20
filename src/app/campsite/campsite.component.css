@@ -1,7 +1,30 @@
-.test-border {
-  border: 1px solid black;
+.campsite-display {
+  font-size: 0.9em;
+  margin: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+.facility-name {
+  font-size: 1.2em;
+}
+.facility-phone {
+  backdrop-filter: contrast(0.5);
+  margin: 7px;
+}
 .watchLater {
   color: red;
+}
+.name-text {
+  text-transform: lowercase;
+}
+.campsites {
+  display: flex;
+  flex-direction: inherit;
+  font-size: 0.9em;
+}
+.campsite-div {
+  display: flex;
+  flex-direction: column;
 }

@@ -1,18 +1,18 @@
 <app-search-criteria
   (searchStateEvent)="onStateSearch($event); getCampingFacilities($event)"
 ></app-search-criteria>
-<app-campsite
-  *ngFor="let stateObject of stateFacilityInfo?.RECDATA"
-  [stateObjectRef]="stateObject"
-  (showDetailEvent)="getAttributes($event)"
-  (showCampsiteIdEvent)="getCampsiteId($event)"
-  [campsiteArray]="campsiteIdInfo"
-
-  (watchListEvent)="onWatch($event)"
-  [watchListRef]="watchList"
->
-</app-campsite>
-
+<div class="campsite-container">
+  <app-campsite
+    *ngFor="let stateObject of stateFacilityInfo?.RECDATA"
+    [stateObjectRef]="stateObject"
+    (showDetailEvent)="getAttributes($event)"
+    (showCampsiteIdEvent)="getCampsiteId($event)"
+    [campsiteArray]="campsiteIdInfo"
+    (watchListEvent)="onWatch($event)"
+    [watchListRef]="watchList"
+  >
+  </app-campsite>
+</div>
 <div class="popUp popUpParent" *ngIf="showActivities">
   <p
     *ngIf="findAttributes(campsiteAttributesArray, 'BBQ')"
