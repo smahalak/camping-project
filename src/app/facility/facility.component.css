@@ -37,3 +37,15 @@
   margin: 5px;
   padding: 5px;
 }
+
+
+ /* I added this */
+@media (min-width: 768px) {
+  .campsite-display {
+    position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  }
+
+}

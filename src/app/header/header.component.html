@@ -1,4 +1,4 @@
-<header class="header">
+<!-- <header class="header">
   <h1 class="main-heading" routerLink="/home">Bear Necessities</h1>
   <nav>
     <a class="nav-item" routerLink="/home">Home</a>
@@ -10,4 +10,23 @@
     <a class="nav-item" routerLink="/recipes">Recipes</a>
     <a class="nav-item" routerLink="/about">About</a>
   </nav>
+</header> -->
+
+<header>
+  <h1 class="logo" routerLink="/home">Bear Necessities</h1>
+  <input type="checkbox" id="nav-toggle" class="nav-toggle" class="nav-toggle">
+  <nav>
+    <ul>
+      <li routerLink="/home">Home</li>
+      <li routerLink="/supplies">Supplies</li>
+      <li routerLink="/recipes">Recipes</li>
+      <li routerLink="/campground-watchlist">Campsite Watchlist</li>
+      <li routerLink="/about">About</li>
+    </ul>
+  </nav>
+
+  <!-- for="nav toggle" looks for id in input -->
+  <label for="nav-toggle" class="nav-toggle-label">
+    <span></span>
+  </label>
 </header>
