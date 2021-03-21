@@ -3,11 +3,8 @@
   <p class="name-text">
     Name {{ camp?.CampsiteName }}
 
-    <i
-      class="far fa-campground"
-      (click)="emitWatchListEvent(camp)"
-      [ngClass]="{ watchLater: checkWatchList(camp) }"
-    ></i>
+    <i class="far fa-campground" (click)="emitWatchListEvent(camp)"
+      [ngClass]="{ watchLater: checkWatchList(camp) }"></i>
   </p>
 </div>
 

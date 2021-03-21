@@ -12,7 +12,11 @@ body {
   margin: 0px;
   padding: 0px;
   color: white;
+  box-sizing: border-box; 
 }
+/*border-box  makes it so your padding doesn't push out your container width instead it pushes the content inwards to make it easier to calculate widths and stuff */
+
+
 body {
   /* background: linear-gradient(to right, #b7e778, #7de5ff); */
   background-image: url(src\assets\camping-background-image1.jpg);
