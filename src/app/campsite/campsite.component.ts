@@ -10,18 +10,19 @@ import { CampingServiceService } from '../camping-service.service';
 export class CampsiteComponent implements OnInit {
   @Input() watchListRef: any = [];
   @Input() campRef: any;
+
   @Output() watchListEvent = new EventEmitter<any>();
 
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void { }
+  ngOnInit(): void {}
 
   goToCampsiteDetails = (campsiteId: string) => {
-    this.router.navigate([`/campsite-details/${campsiteId}`])
-  }
+    this.router.navigate([`/campsite-details/${campsiteId}`]);
+  };
 
   emitWatchListEvent = (campsiteName: any): void => {
     this.watchListEvent.emit(campsiteName);

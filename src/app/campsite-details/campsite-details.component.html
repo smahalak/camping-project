@@ -1,1 +1,8 @@
-
+<div *ngFor="let campsiteAttribute of campsiteAttributeArray; index as i">
+  <div>
+    <p>{{ campsiteAttribute?.CampsiteName }}</p>
+    <div *ngFor="let attribute of campsiteAttribute">
+      <p>{{ attribute.AttributeName }}</p>
+    </div>
+  </div>
+</div>
