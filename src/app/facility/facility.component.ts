@@ -15,12 +15,14 @@ export class FacilityComponent implements OnInit {
 
   campsiteArray: any = [];
 
+
+
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   getCampsites = (facilityId: string) => {
     this.campService

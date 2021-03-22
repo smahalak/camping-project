@@ -5,7 +5,11 @@
     {{ facilityRef?.FacilityName }} <i class="fas fa-campground tent-logo"></i>
   </p>
   <p class="name-text facility-phone">
-    <i *ngIf="facilityRef?.FacilityPhone?.length != 0" class="fa fa-phone"> </i>
+    <i
+      *ngIf="facilityRef?.FacilityPhone?.length != 0"
+      class="fa fa-phone phone"
+    >
+    </i>
     {{ facilityRef?.FacilityPhone }}
   </p>
   <!-- User clicks on button and shows campsites -->

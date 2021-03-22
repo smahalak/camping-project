@@ -6,9 +6,9 @@
 }
 
 .claw {
-  background-image: url(/src/assets/claw.jpeg);
-  height: 3em;
-  width: 3em;
+  margin-right: 300px;
+  height: 60px;
+  width: 60px;
 }
 
 .nav-item {

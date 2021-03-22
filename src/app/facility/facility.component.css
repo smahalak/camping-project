@@ -14,6 +14,11 @@
   width: 300px;
   border: 1px solid;
   color: white;
+  border-radius: 10px;
+}
+
+.phone {
+  margin-right: 0.4em;
 }
 
 .tent-logo {

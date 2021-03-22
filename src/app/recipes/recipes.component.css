@@ -1,11 +1,16 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 a {
   text-decoration: none;
 }
+
+.recipe-heading {
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+  font-size: 4.3em;
+}
+
 .recipe-card {
   display: flex;
   max-width: 200px;
@@ -99,6 +104,7 @@ a {
   background-size: cover;
 }
 .flex-parent {
+  margin-top: 4.4em;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
