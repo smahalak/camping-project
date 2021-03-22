@@ -28,6 +28,9 @@
   text-align: center;
   align-items: center;
   margin: 5px 10px;
+  font-size: 2.8em;
+  font-weight: bold;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   justify-content: space-between;
 }
 
@@ -42,6 +45,18 @@
 
 .state:hover {
   color: midnightblue;
+}
+
+.submit {
+  padding: 0.3em;
+  font-size: 0.55em;
+  border: none;
+  background-color: rgb(240, 208, 68);
+  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
+  color: black;
+  margin: 10px;
+  border-radius: 15px;
+  cursor: pointer;
 }
 
 /* I added this */
