@@ -1,7 +1,9 @@
-<p>{{ campsite?.CampsiteName }}</p>
-<ol>
-  <li *ngFor="let attribute of campsite?.ATTRIBUTES">
-    <p>{{ attribute?.AttributeName }}</p>
-    <p>{{ attribute?.AttributeValue }}</p>
-  </li>
-</ol>
+<div class="campsite-details-div">
+  <p>{{ campsite?.CampsiteName }}</p>
+  <ol>
+    <li *ngFor="let attribute of campsite?.ATTRIBUTES">
+      <p>{{ attribute?.AttributeName }}</p>
+      <p>{{ attribute?.AttributeValue }}</p>
+    </li>
+  </ol>
+</div>
