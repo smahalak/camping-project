@@ -12,6 +12,7 @@ export class FacilityComponent implements OnInit {
   @Input() watchListRef: any = [];
   @Output() showCampsiteIdEvent = new EventEmitter<string>();
   @Input() campsiteArray: any[];
+  // passing event emitter from facility to home
   @Output() showDetailEvent = new EventEmitter<any>();
   @Output() watchListEvent = new EventEmitter<any>();
   //stateName: string;
@@ -24,6 +25,7 @@ export class FacilityComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {}
+  // Method that is being used with event emitter
   emitShowDetailEvent = (stateObjectRef: any) => {
     this.showDetailEvent.emit(stateObjectRef);
     this.setShowDetails();

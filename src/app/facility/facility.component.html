@@ -5,6 +5,7 @@
   <p class="name-text facility-phone">
     {{ stateObjectRef?.FacilityPhone }}
   </p>
+  <!-- User clicks on button and shows campsites -->
   <button class="btn" (click)="emitShowDetailEvent(stateObjectRef)">
     Available campsites!
   </button>
@@ -14,8 +15,12 @@
 <div *ngIf="showDetails" class="campsites">
   <div *ngFor="let camp of campsiteArray" class="campsite-div">
     <!-- Provides campsite names -->
-    <app-campsite [camp]="camp" [watchListRef]="watchListRef" (showCampsiteIdEvent)="emitCampsiteIdEvent($event)"
-      (watchListEvent)="emitWatchListEvent($event)">
+    <app-campsite
+      [camp]="camp"
+      [watchListRef]="watchListRef"
+      (showCampsiteIdEvent)="emitCampsiteIdEvent($event)"
+      (watchListEvent)="emitWatchListEvent($event)"
+    >
     </app-campsite>
   </div>
   <div *ngIf="campsiteArray.length === 0">
