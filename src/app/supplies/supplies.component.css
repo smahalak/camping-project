@@ -2,26 +2,47 @@
   text-decoration: line-through;
 }
 
+.supply-type-div {
+  font-size: 0.9em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  backdrop-filter: contrast(0.5);
+  margin: 4px 7px;
+  padding: 5px 5px;
+  border: 1px solid;
+}
 .kitchen-filter {
-  border: solid blue 1px;
+  color: blue;
 }
 
 .BBQ-filter {
-  border: solid rgba(207, 44, 44, 0.651) 1px;
+  color: rgba(207, 44, 44, 0.651);
 }
 
 .onFirepit {
-  border: solid rgb(235, 194, 11) 1px;
+  color: rgb(235, 194, 11);
 }
 
 .Camping-filter {
-  border: solid green 1px;
+  color: green;
 }
 
-.Default-filter { 
-  border: solid purple 1px;
+.Default-filter {
+  color: purple;
 }
 
 .Electric-filter {
-  border: solid gold 1px;
+  color: gold;
+}
+
+@media (min-width: 768px) {
+  .supply-list-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .supply-type-div {
+    flex: 1 20%;
+  }
 }

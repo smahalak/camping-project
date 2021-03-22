@@ -31,72 +31,73 @@
   <button class="btn" (click)="showFilteredCampingCategory('Electric')">
     Electrical Supplies
   </button>
-  <div *ngIf="onKitchen">
-    <h3>Kichen Supplies</h3>
-    <ul class="kitchen-filter">
-      <li *ngFor="let item of showFilteredList('Kitchen'); index as i">
-        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-          {{ item.name }}
-        </p>
-      </li>
-    </ul>
-  </div>
+  <div class="supply-list-container">
+    <div *ngIf="onKitchen" class="supply-type-div">
+      <h3>Kitchen Supplies</h3>
+      <ul class="kitchen-filter">
+        <li *ngFor="let item of showFilteredList('Kitchen'); index as i">
+          <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+            {{ item.name }}
+          </p>
+        </li>
+      </ul>
+    </div>
 
-  <div *ngIf="onBBQ">
-    <h3>BBQ Supplies</h3>
-    <ul class="BBQ-filter">
-      <li *ngFor="let item of showFilteredList('BBQ'); index as i">
-        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-          {{ item.name }}
-        </p>
-      </li>
-    </ul>
-  </div>
+    <div *ngIf="onBBQ" class="supply-type-div">
+      <h3>BBQ Supplies</h3>
+      <ul class="BBQ-filter">
+        <li *ngFor="let item of showFilteredList('BBQ'); index as i">
+          <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+            {{ item.name }}
+          </p>
+        </li>
+      </ul>
+    </div>
 
-  <div *ngIf="onFirepit">
-    <h3>Firepit Essentials</h3>
-    <ul class="Firepit-filter">
-      <li *ngFor="let item of showFilteredList('Firepit'); index as i">
-        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-          {{ item.name }}
-        </p>
-      </li>
-    </ul>
-  </div>
+    <div *ngIf="onFirepit" class="supply-type-div">
+      <h3>Firepit Essentials</h3>
+      <ul class="Firepit-filter">
+        <li *ngFor="let item of showFilteredList('Firepit'); index as i">
+          <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+            {{ item.name }}
+          </p>
+        </li>
+      </ul>
+    </div>
 
-  <div *ngIf="onCamping">
-    <h3>Campsite Supplies</h3>
-    <ul class="Camping-filter">
-      <li *ngFor="let item of showFilteredList('Camping'); index as i">
-        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-          {{ item.name }}
-        </p>
-      </li>
-    </ul>
-  </div>
+    <div *ngIf="onCamping" class="supply-type-div">
+      <h3>Campsite Supplies</h3>
+      <ul class="Camping-filter">
+        <li *ngFor="let item of showFilteredList('Camping'); index as i">
+          <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+            {{ item.name }}
+          </p>
+        </li>
+      </ul>
+    </div>
 
-  <div *ngIf="onDefault">
-    <h3>Bear Necessities</h3>
-    <ul class="Default-filter">
-      <li *ngFor="let item of showFilteredList('Default'); index as i">
-        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-          {{ item.name }}
-        </p>
-      </li>
-    </ul>
-  </div>
+    <div *ngIf="onDefault" class="supply-type-div">
+      <h3>Bear Necessities</h3>
+      <ul class="Default-filter">
+        <li *ngFor="let item of showFilteredList('Default'); index as i">
+          <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+            {{ item.name }}
+          </p>
+        </li>
+      </ul>
+    </div>
 
-  <div *ngIf="onElectric">
-    <h3>Electrical Supplies</h3>
-    <ul class="Electric-filter">
-      <li *ngFor="let item of showFilteredList('Electric'); index as i">
-        <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-          {{ item.name }}
-        </p>
-      </li>
-    </ul>
+    <div *ngIf="onElectric" class="supply-type-div">
+      <h3>Electrical Supplies</h3>
+      <ul class="Electric-filter">
+        <li *ngFor="let item of showFilteredList('Electric'); index as i">
+          <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
+            {{ item.name }}
+          </p>
+        </li>
+      </ul>
+    </div>
   </div>
-
   <!-- <ul>
     <li *ngFor="let item of filter(searchTerm); index as i">
       <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
