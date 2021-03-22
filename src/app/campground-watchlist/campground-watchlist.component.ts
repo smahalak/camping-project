@@ -10,7 +10,7 @@ export class CampgroundWatchlistComponent implements OnInit {
   watchList: any[] = [];
   campsiteAttributesArray: any[];
   showActivities: boolean = false;
-  constructor(private campService: CampingServiceService) {}
+  constructor(private campService: CampingServiceService) { }
 
   ngOnInit(): void {
     this.getAndSetWatchList();
@@ -28,7 +28,7 @@ export class CampgroundWatchlistComponent implements OnInit {
     //console.log(stateObjectRef);
     let campsiteId: string = campsiteIdRef;
     console.log('in the getcampsiteID method');
-    this.campService.getSelectedCampsiteId(campsiteId).subscribe((response) => {
+    this.campService.getCampsitesByFacilityId(campsiteId).subscribe((response) => {
       console.log(Response);
       console.log(campsiteId);
       //filter method on response

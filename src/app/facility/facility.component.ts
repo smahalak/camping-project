@@ -8,33 +8,31 @@ import { CampingServiceService } from '../camping-service.service';
   styleUrls: ['./facility.component.css'],
 })
 export class FacilityComponent implements OnInit {
-  @Input() stateObjectRef: any;
+  @Input() facilityRef: any;
   @Input() watchListRef: any = [];
-  @Output() showCampsiteIdEvent = new EventEmitter<string>();
-  @Input() campsiteArray: any[];
-  // passing event emitter from facility to home
-  @Output() showDetailEvent = new EventEmitter<any>();
   @Output() watchListEvent = new EventEmitter<any>();
-  //stateName: string;
-  //states: any;
   showDetails: boolean = false;
+  campsiteArray: any = [];
 
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
-  // Method that is being used with event emitter
-  emitShowDetailEvent = (stateObjectRef: any) => {
-    this.showDetailEvent.emit(stateObjectRef);
-    this.setShowDetails();
-  };
-  emitCampsiteIdEvent = (campsiteIdRef: string) => {
-    this.showCampsiteIdEvent.emit(campsiteIdRef);
-  };
+  ngOnInit(): void { }
 
-  setShowDetails = (): void => {
+
+  getCampsites = (facilityId: string) => {
+    this.campService.getCampsitesByFacilityId(facilityId).subscribe((response) => {
+      console.log(response);
+      this.campsiteArray = response.RECDATA;
+      this.toggleShowDetails();
+    })
+  }
+
+
+
+  toggleShowDetails = (): void => {
     this.showDetails = !this.showDetails;
   };
   emitWatchListEvent = (campsiteName: any): void => {

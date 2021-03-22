@@ -17,6 +17,7 @@ import { AddSuppliesComponent } from './add-supplies/add-supplies.component';
 import { SuppliesdivComponent } from './suppliesdiv/suppliesdiv.component';
 import { CampgroundWatchlistComponent } from './campground-watchlist/campground-watchlist.component';
 import { FacilityComponent } from './facility/facility.component';
+import { CampsiteDetailsComponent } from './campsite-details/campsite-details.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { FacilityComponent } from './facility/facility.component';
     SuppliesdivComponent,
     CampgroundWatchlistComponent,
     FacilityComponent,
+    CampsiteDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

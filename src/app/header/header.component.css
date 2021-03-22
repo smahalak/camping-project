@@ -16,7 +16,7 @@
 header {
   background-color:midnightblue;
   text-align: center;
-  position: fixed;
+  position: fixed; 
   z-index: 1;
   width: 100%;
   position: absolute;
@@ -27,7 +27,7 @@ header {
 
 
 nav {
-  position: absolute;  /* Because of header position fixed, nav is taken out of flow but starts at bottom of navbar  */
+  /* position: absolute;  Because of header position fixed, nav is taken out of flow but starts at bottom of navbar  */
   text-align: left;
   top: 100%;
   left: 0;

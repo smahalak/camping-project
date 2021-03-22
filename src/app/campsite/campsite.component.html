@@ -1,22 +1,22 @@
 <!-- Displays the Camp Facility Name and phone number -->
 <div class="campsite-list">
   <p class="name-text">
-    Name {{ camp?.CampsiteName }}
+    Name {{ campRef?.CampsiteName }}
 
     <i
       class="fas fa-heart"
-      (click)="emitWatchListEvent(camp)"
-      [ngClass]="{ watchLater: checkWatchList(camp) }"
+      (click)="emitWatchListEvent(campRef)"
+      [ngClass]="{ watchLater: checkWatchList(campRef) }"
     ></i>
   </p>
 </div>
 
-<p class="name-text">Campsite Type {{ camp?.CampsiteType }}</p>
-<!-- <div *ngFor="let attribute of camp.ATTRIBUTES"> -->
-<!-- <p>{{ attribute.AttributeName }}</p> -->
-<!-- </div> -->
-<div *ngFor="let equipment of camp.PERMITTEDEQUIPMENT">
+<p class="name-text">Campsite Type {{ campRef?.CampsiteType }}</p>
+
+<div *ngFor="let equipment of campRef.PERMITTEDEQUIPMENT">
   <p class="name-text">{{ equipment.EquipmentName }}</p>
 </div>
 
-<button class="btn" (click)="test(camp.CampsiteID)">See camping guide</button>
+<button class="btn" (click)="goToCampsiteDetails(campRef.CampsiteID)">
+  See campsite details
+</button>

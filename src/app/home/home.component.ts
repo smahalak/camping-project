@@ -14,7 +14,6 @@ export class HomeComponent implements OnInit {
   campData: any;
   states: any;
   state: string | null = null;
-  stateFacilityInfo: any;
   attributes: any;
   facilityArray: any[];
   campsiteIdInfo: any;
@@ -34,67 +33,21 @@ export class HomeComponent implements OnInit {
     //takes queryparm from onStateSearch and if State is selected grabs state data from service with state as a queryparm
     this.route.queryParamMap.subscribe((response) => {
       //console.log(response);
-      let state: string | null = response.get('state');
+      let state: string = response.get('state');
       if (state) {
         this.getCampingFacilities(state);
-        this.getAttributes(state);
       }
     });
-
-
     this.getAndSetWatchList();
-
   }
 
   getCampingFacilities = (state: string) => {
-    this.campService.getCampingState(state).subscribe((data) => {
-      //console.log(data);
-      this.stateFacilityInfo = data;
-      console.log(this.stateFacilityInfo);
-      this.facilityArray = this.stateFacilityInfo.RECDATA;
-
+    this.campService.getFacilitiesByState(state).subscribe((data) => {
+      this.facilityArray = data.RECDATA;
       console.log(this.facilityArray);
-      //console.log(this.facilityArray);
-
-      //stateFacilityInfo now used in home html which will pass to child campingsite
-    });
-  };
-  getAttributes = (stateObjectRef: any) => {
-    //console.log(stateObjectRef);
-    let facilityid: string = stateObjectRef.FacilityID;
-    console.log(facilityid);
-    this.campService.getCampingSites(facilityid).subscribe((response) => {
-      console.log(response);
-      this.campsiteIdInfo = response.RECDATA;
-      console.log(this.campsiteIdInfo);
-      //Provides array with campsite names
-    });
-  };
-  getCampsiteId = (campsiteIdRef: string) => {
-    //console.log(stateObjectRef);
-    let campsiteId: string = campsiteIdRef;
-    console.log('in the getcampsiteID method');
-    this.campService.getSelectedCampsiteId(campsiteId).subscribe((response) => {
-      console.log(response);
-      console.log(campsiteId);
-      //filter method on response
-      this.campsiteAttributesArray = response.RECDATA;
-      this.setShowActivities();
-      // array contains attribute after clicking popup.
-      // console.log(this.campsiteAttributesArray);
     });
   };
 
-  setShowActivities = (): void => {
-    this.showActivities = !this.showActivities;
-    console.log(this.showActivities);
-  };
-
-  findAttributes = (campsiteAttributesArray: any, type: string): boolean => {
-    return campsiteAttributesArray.some((item) => {
-      return item.AttributeName === type;
-    });
-  };
 
   //looks at search-criteria form that was submitted and stores result in query parm which is used onit
   onStateSearch = (state: string) => {

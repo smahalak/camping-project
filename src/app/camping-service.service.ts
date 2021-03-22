@@ -9,55 +9,43 @@ export class CampingServiceService {
   apiKey: string = secret.api_key;
   facilityId: string;
   campsiteId: string;
-  campingSitesURL: string =
-    'https://ridb.recreation.gov/api/v1/facilities/${facilityId}/campsites';
-  //endpoint will return campingsites
 
-  facilityURL: string = 'https://ridb.recreation.gov/api/v1/facilities';
-  //using to get states
+  baseURL: string = 'https://ridb.recreation.gov/api/v1'
 
   selectStateName: string;
 
   watchList: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
-  getCampingState = (state: string): any => {
+  getFacilitiesByState = (state: string): any => {
     let params: any = {
       limit: '10',
       state: state,
       apikey: this.apiKey,
     };
-    return this.http.get(this.facilityURL, { params: params });
+    return this.http.get(`${this.baseURL}/facilities`, { params: params });
   };
 
-  getCampingSites = (facilityId: string): any => {
+  getCampsitesByFacilityId = (facilityId: string): any => {
     let params: any = {
-      limit: '10',
-      apikey: this.apiKey,
-    };
-    this.campingSitesURL =
-      'https://ridb.recreation.gov/api/v1/facilities/' +
-      facilityId +
-      '/campsites';
-    console.log(this.campingSitesURL);
-    return this.http.get(this.campingSitesURL, { params: params });
-  };
-  getSelectedCampsiteId = (campsiteId: string): any => {
-    let params: any = {
-      limit: '20',
-      apikey: this.apiKey,
-    };
-    this.campingSitesURL =
-      'https://ridb.recreation.gov/api/v1/campsites/' +
-      campsiteId +
-      '/attributes';
 
-    return this.http.get(this.campingSitesURL, { params: params });
+      apikey: this.apiKey,
+    };
+    return this.http.get(`${this.baseURL}/facilities/${facilityId}/campsites`, { params: params });
   };
+
+
+  getCampsiteByCampsiteId = (campsiteId: string) => {
+    return this.http.get(`${this.baseURL}/campsites/${campsiteId}`, {
+      headers: {
+        apikey: this.apiKey,
+      },
+    });
+  }
 
   getStateFacility = (): any => {
-    return this.http.get(this.facilityURL, {
+    return this.http.get(`${this.baseURL}/facilties`, {
       headers: {
         apikey: this.apiKey,
       },
