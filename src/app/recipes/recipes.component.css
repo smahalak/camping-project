@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-a  {
+a {
   text-decoration: none;
 }
 .recipe-card {
@@ -40,7 +40,7 @@ a  {
   background-color: blue;
 }
 .recipe-container:hover .front {
-  transform: translateY(-15%) scale(0.9); /*shifts poster up*/
+  transform: translateY(-15%) scale(0.9); /*shifts recipe container up*/
 }
 .recipe-container:hover .back {
   opacity: 1;
@@ -58,9 +58,6 @@ a  {
   border-radius: 5px;
   margin: 20px;
 }
-
-
-
 
 .steak {
   background-image: url("./steak.jpg");
@@ -93,7 +90,6 @@ a  {
 .smores {
   background-image: url("./smores.jpg");
 }
-
 
 .image-sizing {
   height: 300px;

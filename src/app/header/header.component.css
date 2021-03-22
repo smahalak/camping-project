@@ -4,11 +4,28 @@
   align-items: center;
   padding: 10px 10px;
 }
+
+.claw {
+  background-image: url("/src/assets/claw.jpeg");
+  height: 3em;
+  width: 3em;
+}
+
 .nav-item {
   margin: 5px;
   padding: 5px;
   text-decoration: none;
+  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
+  color: white;
+  font-size: 1.4em;
 }
+
+.nav-item:hover {
+  color: rgb(240, 208, 68);
+}
+
 .main-heading {
-  font-size: 2em;
+  font-size: 4em;
+  color: rgb(240, 208, 68);
+  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
 }
