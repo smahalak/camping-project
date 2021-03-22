@@ -1,3 +1,29 @@
 .campsite-details-div {
-  color: white;
+  display: flex;
+  flex-direction: column;
+  color: #ffa500;
+  width: 30%;
+  height: 30%;
+  margin: 30%;
+  justify-content: space-between;
+  align-items: center;
+}
+div.campsite-details-div {
+  background-color: #202b36;
+  width: 24em;
+  height: 16em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-align: center;
+  padding: 20px;
+}
+.camp-details-header {
+  font-size: 1.2em;
+  color: #ffa500;
+}
+.attributes-style {
+  display: flex;
+  flex-direction: column;
+}
+@media only screen and (min-width: 768px) {
 }
