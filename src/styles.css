@@ -1,21 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 
-h1,
-h2,
-h3,
-p,
-ul,
-a,
-button,
-body {
+* {
   font-family: "Rubik", sans-serif;
   margin: 0px;
   padding: 0px;
-  color: white;
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 /*border-box  makes it so your padding doesn't push out your container width instead it pushes the content inwards to make it easier to calculate widths and stuff */
-
 
 body {
   /* background: linear-gradient(to right, #b7e778, #7de5ff); */
@@ -28,9 +19,11 @@ html {
 }
 .btn {
   border: none;
-  background-color: beige;
+  background-color: rgb(240, 208, 68);
+  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
   color: black;
   padding: 7px;
   margin: 10px;
   border-radius: 15px;
+  cursor: pointer;
 }

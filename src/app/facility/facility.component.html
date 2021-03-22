@@ -3,7 +3,7 @@
 <div class="campsite-display">
   <p class="name-text facility-name">{{ facilityRef?.FacilityName }}</p>
   <p class="name-text facility-phone">
-    {{ facilityRef?.FacilityPhone }}
+    {{ facilityRef?.FacilityPhone }} <i class="fas fa-campground tent-logo"></i>
   </p>
   <!-- User clicks on button and shows campsites -->
   <button class="btn" (click)="getCampsites(facilityRef.FacilityID)">
@@ -12,6 +12,7 @@
 </div>
 
 <!-- loops through campsiteID -->
+
 <div *ngIf="showDetails" class="campsites">
   <div *ngFor="let camp of campsiteArray" class="campsite-div">
     <!-- Provides campsite names -->

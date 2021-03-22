@@ -16,6 +16,13 @@
   border: none;
   width: 100%;
 }
+
+.state-dropdown-text {
+  color: white;
+  text-shadow: 0.005em 0 black, 0 0.005em black, -0.05em 0 black,
+    0 -0.005em black;
+}
+
 .select-div {
   display: flex;
   text-align: center;
@@ -23,12 +30,18 @@
   margin: 5px 10px;
   justify-content: space-between;
 }
+
 .state {
+  background-color: rgb(240, 208, 68);
   padding: 5px;
   border-radius: 5px;
   border: none;
   margin-left: 5px;
   width: 50%;
+}
+
+.state:hover {
+  color: midnightblue;
 }
 
 /* I added this */
