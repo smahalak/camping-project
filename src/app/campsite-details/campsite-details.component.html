@@ -1,9 +1,24 @@
 <div class="campsite-details-div">
-  <p>{{ campsite?.CampsiteName }}</p>
-  <ol>
-    <li *ngFor="let attribute of campsite?.ATTRIBUTES">
-      <p>{{ attribute?.AttributeName }}</p>
-      <p>{{ attribute?.AttributeValue }}</p>
-    </li>
-  </ol>
+  <div class="attributes-style">
+    <h2 class="camp-details-header">
+      Campsite Name :{{ campsite?.CampsiteName }}
+      <button>HEART</button>
+    </h2>
+
+    <h2 class="camp-details-header">
+      Campsite Type:{{ campsite?.CampsiteType }}
+    </h2>
+    <h2 class="camp-details-header">
+      Accessible:{{ campsite?.CampsiteAccessible }}
+    </h2>
+    <h2 class="camp-details-header">Campsite Attributes</h2>
+
+    <ol>
+      <li *ngFor="let attribute of campsite?.ATTRIBUTES">
+        <p>Attribute Name: {{ attribute?.AttributeName }}</p>
+        <p>Attribute Value:{{ attribute?.AttributeValue }}</p>
+      </li>
+    </ol>
+  </div>
+  <button>Pack for This Trip</button>
 </div>
