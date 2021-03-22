@@ -8,8 +8,7 @@ import { CampingServiceService } from '../camping-service.service';
   styleUrls: ['./campsite-details.component.css'],
 })
 export class CampsiteDetailsComponent implements OnInit {
-  @Input() campDetailRef: any;
-  campsiteAttributeArray: any = [];
+  campsite: any;
   constructor(
     private route: ActivatedRoute,
     private campService: CampingServiceService
@@ -22,9 +21,12 @@ export class CampsiteDetailsComponent implements OnInit {
         console.log('impliment logic to handle no id');
       } else {
         this.campService.getCampsiteByCampsiteId(id).subscribe((data) => {
-          console.log(data[0].ATTRIBUTES);
-
-          return (this.campsiteAttributeArray = data);
+          console.log(data);
+          this.campsite = data[0];
+          // console.log(data[0].ATTRIBUTES);
+          // this.atrributes = data[0].ATTRIBUTES;
+          // return (this.campsiteAttributeArray = data);
+          // console.log(this.campsiteAttributeArray);
         });
       }
     });

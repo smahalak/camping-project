@@ -1,8 +1,8 @@
 .search-container {
-  position: absolute;   /* I added this */
-  top: 35%;   /* I added this */
-  left: 50%;   /* I added this */
-  transform: translate(-50%);   /* I added this */
+  /* position: absolute;   I added this */
+  top: 35%; /* I added this */
+  left: 50%; /* I added this */
+  /* transform: translate(-50%);   I added this */
   display: flex;
   justify-content: center;
 }
@@ -31,15 +31,12 @@
   width: 50%;
 }
 
-
-
- /* I added this */
+/* I added this */
 @media (min-width: 768px) {
-  .search-container {
-    position: absolute;
-  top: 10%;
-  left: 50%;
-  transform: translate(-50%);
-  }
-
+  /* .search-container { */
+  /* position: absolute; */
+  /* top: 10%; */
+  /* left: 50%; */
+  /* transform: translate(-50%); */
+  /* } */
 }
