@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { AddSuppliesComponent } from './add-supplies/add-supplies.component';
 import { CampgroundWatchlistComponent } from './campground-watchlist/campground-watchlist.component';
+import { CampsiteDetailsComponent } from './campsite-details/campsite-details.component';
 import { FourOhFourComponent } from './four-oh-four/four-oh-four.component';
 import { HomeComponent } from './home/home.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'recipes', component: RecipesComponent },
   { path: 'add-supplies', component: AddSuppliesComponent },
   { path: 'about', component: AboutComponent },
+  { path: 'campsite-details/:id', component: CampsiteDetailsComponent },
   { path: 'campground-watchlist', component: CampgroundWatchlistComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -24,4 +26,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }
