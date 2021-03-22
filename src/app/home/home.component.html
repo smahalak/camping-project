@@ -2,6 +2,7 @@
   (searchStateEvent)="onStateSearch($event); getCampingFacilities($event)"
 ></app-search-criteria>
 <div class="campsite-container">
+  <!-- 2 way binding on appfacility with showDetailEvent. Now these know about each other -->
   <app-facility
     *ngFor="let stateObject of stateFacilityInfo?.RECDATA"
     [stateObjectRef]="stateObject"
