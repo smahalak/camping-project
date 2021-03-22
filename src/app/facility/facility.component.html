@@ -1,9 +1,12 @@
 <!-- Displays the Camp Facility Name and phone number -->
 
 <div class="campsite-display">
-  <p class="name-text facility-name">{{ facilityRef?.FacilityName }}</p>
+  <p class="name-text facility-name">
+    {{ facilityRef?.FacilityName }} <i class="fas fa-campground tent-logo"></i>
+  </p>
   <p class="name-text facility-phone">
-    {{ facilityRef?.FacilityPhone }} <i class="fas fa-campground tent-logo"></i>
+    <i *ngIf="facilityRef?.FacilityPhone?.length != 0" class="fa fa-phone"> </i>
+    {{ facilityRef?.FacilityPhone }}
   </p>
   <!-- User clicks on button and shows campsites -->
   <button class="btn" (click)="getCampsites(facilityRef.FacilityID)">
@@ -23,7 +26,7 @@
     >
     </app-campsite>
   </div>
-  <div *ngIf="campsiteArray.length === 0">
+  <div class="error" *ngIf="campsiteArray.length === 0">
     <p>No campsite Info</p>
   </div>
 </div>

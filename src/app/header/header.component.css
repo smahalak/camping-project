@@ -2,11 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 10px;
+  margin-right: 0.5em;
 }
 
 .claw {
-  background-image: url("/src/assets/claw.jpeg");
+  background-image: url(/src/assets/claw.jpeg);
   height: 3em;
   width: 3em;
 }

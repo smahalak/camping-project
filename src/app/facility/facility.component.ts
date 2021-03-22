@@ -12,29 +12,30 @@ export class FacilityComponent implements OnInit {
   @Input() watchListRef: any = [];
   @Output() watchListEvent = new EventEmitter<any>();
   showDetails: boolean = false;
+
   campsiteArray: any = [];
 
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) { }
+  ) {}
 
-  ngOnInit(): void { }
-
+  ngOnInit(): void {}
 
   getCampsites = (facilityId: string) => {
-    this.campService.getCampsitesByFacilityId(facilityId).subscribe((response) => {
-      console.log(response);
-      this.campsiteArray = response.RECDATA;
-      this.toggleShowDetails();
-    })
-  }
-
-
+    this.campService
+      .getCampsitesByFacilityId(facilityId)
+      .subscribe((response) => {
+        console.log(response);
+        this.campsiteArray = response.RECDATA;
+        this.toggleShowDetails();
+      });
+  };
 
   toggleShowDetails = (): void => {
     this.showDetails = !this.showDetails;
   };
+
   emitWatchListEvent = (campsiteName: any): void => {
     this.watchListEvent.emit(campsiteName);
   };
