@@ -13,25 +13,33 @@
   >
     Add new item
   </button>
-  <button class="btn" (click)="showFilteredCampingCategory('Kitchen')">
-    Kitchen
-  </button>
-  <button class="btn" (click)="showFilteredCampingCategory('BBQ')">BBQ</button>
-  <button class="btn" (click)="showFilteredCampingCategory('Firepit')">
-    Firepit
-  </button>
-  <button class="btn" (click)="showFilteredCampingCategory('Camping')">
-    Campsite Supplies
-  </button>
+
   <button class="btn" (click)="showFilteredCampingCategory('Default')">
     Bear Necessities
   </button>
+
+  <button class="btn" (click)="showFilteredCampingCategory('BBQ')">BBQ</button>
+
+  <button class="btn" (click)="showFilteredCampingCategory('Camping')">
+    Campsite Supplies
+  </button>
+
+  <button class="btn" (click)="showFilteredCampingCategory('Firepit')">
+    Firepit
+  </button>
+
   <button class="btn" (click)="showFilteredCampingCategory('Electric')">
     Electrical Supplies
   </button>
+
+  <button class="btn" (click)="showFilteredCampingCategory('Kitchen')">
+    Kitchen
+  </button>
+
   <button class="btn" (click)="showFilteredCampingCategory('All')">
     All Supplies
   </button>
+
   <div class="supply-list-container">
     <div *ngIf="onKitchen" class="supply-type-div">
       <h3>Kitchen Supplies</h3>

@@ -14,6 +14,14 @@
   text-align: center;
   padding: 20px;
 }
+
+.close-X {
+  color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 ::-webkit-scrollbar {
   width: 0.8em;
   overflow-y: scroll;
@@ -42,6 +50,7 @@
   color: rgb(240, 208, 68);
 }
 .campsite-child-details-div {
+  position: relative;
   display: flex;
   flex-direction: column;
 }

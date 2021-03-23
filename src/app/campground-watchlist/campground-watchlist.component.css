@@ -1,3 +1,28 @@
+.bear-div {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.claw {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  height: 200px;
+  width: 200px;
+}
+
+.bear-text {
+  font-size: 1.6em;
+  background-color: #222831;
+  opacity: 0.9;
+  width: 350px;
+  border: 1px solid;
+  color: white;
+  border-radius: 10px;
+  margin-top: 8em;
+}
+
 .campsite-display {
   font-size: 0.9em;
   margin: 5px;
@@ -11,7 +36,7 @@
   width: 300px;
   border: 1px solid;
 }
-.test {
+.campsite-card {
   font-size: 0.9em;
   margin: 5px;
   padding: 5px;

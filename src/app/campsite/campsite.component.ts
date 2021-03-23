@@ -30,9 +30,6 @@ export class CampsiteComponent implements OnInit {
 
   checkWatchList = (campsiteName: any): boolean => {
     return this.watchListRef.some((item) => {
-      console.log(item);
-      console.log(campsiteName);
-
       return item.CampsiteID === campsiteName.CampsiteID;
     });
   };
