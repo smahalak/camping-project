@@ -4,12 +4,28 @@
 
 .available-btn {
   border: none;
-  background-color: midnightblue;
-  color: white;
+  /* background-color: midnightblue; */
+  background-color: black;
+  color: rgb(240, 208, 68);
   text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
-  color: black;
+  /* color: black; */
   padding: 7px;
-  margin: 10px;
+  /* margin: 10px; */
   border-radius: 15px;
   cursor: pointer;
+}
+.label-text {
+  color: black;
+  border: none;
+  text-shadow: none;
+  font-size: 0.8em;
+}
+.equipment-div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  vertical-align: text-top;
+}
+.campsite-list {
+  margin-bottom: 5px;
 }

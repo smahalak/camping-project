@@ -1,7 +1,7 @@
 <!-- Displays the Camp Facility Name and phone number -->
 <div class="campsite-list">
   <p class="name-text">
-    Name {{ campRef?.CampsiteName }}
+    <span class="label-text">Name:</span> {{ campRef?.CampsiteName }}
 
     <i
       class="fas fa-heart"
@@ -11,10 +11,15 @@
   </p>
 </div>
 
-<p class="name-text">Campsite Type {{ campRef?.CampsiteType }}</p>
-
-<div *ngFor="let equipment of campRef.PERMITTEDEQUIPMENT">
-  <p class="name-text">{{ equipment.EquipmentName }}</p>
+<p class="name-text">
+  <span class="label-text">Campsite Type:</span> {{ campRef?.CampsiteType }}
+</p>
+<div class="equipment-div" *ngIf="campRef.PERMITTEDEQUIPMENT.length != 0">
+  <span class="label-text">Equipment List: </span>
+  <div *ngFor="let equipment of campRef.PERMITTEDEQUIPMENT">
+    <p class="name-text">{{ equipment.EquipmentName }}</p>
+    <span></span>
+  </div>
 </div>
 
 <button class="available-btn" (click)="goToCampsiteDetails(campRef.CampsiteID)">

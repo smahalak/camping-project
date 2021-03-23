@@ -62,5 +62,8 @@
   background-color: rgba(189, 195, 199, 0.2);
   color: rgb(240, 208, 68);
 }
+.label-text {
+  color: white;
+}
 @media only screen and (min-width: 768px) {
 }
