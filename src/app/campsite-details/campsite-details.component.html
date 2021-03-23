@@ -19,8 +19,14 @@
       <ol class="list-style">
         <h2 class="camp-details-header">Campsite Attributes</h2>
         <li class="list-style" *ngFor="let attribute of campsite?.ATTRIBUTES">
-          <p>Attribute Name: {{ attribute?.AttributeName }}</p>
-          <p>Attribute Value:{{ attribute?.AttributeValue }}</p>
+          <p>
+            <span class="label-text">Attribute Name:</span>
+            {{ attribute?.AttributeName }}
+          </p>
+          <p>
+            <span class="label-text">Attribute Value:</span>
+            >{{ attribute?.AttributeValue }}
+          </p>
         </li>
       </ol>
     </div>

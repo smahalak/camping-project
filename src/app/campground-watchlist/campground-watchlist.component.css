@@ -1,5 +1,6 @@
 .watch-list-container {
   margin-top: 150px;
+  display: flex;
 }
 
 .bear-div {
@@ -49,7 +50,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #222831;
+  /* background-color: #222831; */
+  background-color: rgba(243, 140, 56, 0.8);
   opacity: 0.9;
   margin: 4px 7px;
   padding: 5px 5px;

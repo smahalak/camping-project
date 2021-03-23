@@ -70,10 +70,13 @@
 
 /* need to fix */
 .campsites {
-  font-size: 1.4em;
+  /* font-size: 1.2em; */
+  font-size: 1em;
   border-radius: 1em;
   color: white;
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+  display: flex;
+  flex-wrap: wrap;
 }
 .btn {
   color: black;

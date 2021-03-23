@@ -10,9 +10,10 @@
 
 body {
   /* background: linear-gradient(to right, #b7e778, #7de5ff); */
-  background-image: url(src\assets\camping-background-image1.jpg);
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
+  background: url(src\assets\camping-background-imag.jpg) no-repeat fixed 100%
+    100%;
+  /* background-repeat: no-repeat, repeat; */
+  /* background-size: cover; */
 }
 
 .btn {
