@@ -3,14 +3,42 @@
   <img class="claw" src="../assets/bear.png" alt="bear image" />
 
   <nav>
-    <a class="nav-item" routerLink="/home">Home</a>
-
-    <a class="nav-item" routerLink="/campground-watchlist"
-      >Favorite Campsites</a
+    <a
+      class="nav-item"
+      routerLink="/home"
+      (click)="changeClicked('home')"
+      [ngClass]="{ 'tab-color': checkClicked('home') }"
+      >Home</a
     >
-    <a class="nav-item" routerLink="/supplies">Supplies</a>
-    <a class="nav-item" routerLink="/recipes">Recipes</a>
-    <a class="nav-item" routerLink="/about">About</a>
+
+    <a
+      class="nav-item"
+      routerLink="/campground-watchlist"
+      (click)="changeClicked('favorites')"
+      [ngClass]="{ 'tab-color': checkClicked('favorites') }"
+      >Favorite Campsites
+    </a>
+    <a
+      class="nav-item"
+      routerLink="/supplies"
+      (click)="changeClicked('supplies')"
+      [ngClass]="{ 'tab-color': checkClicked('supplies') }"
+      >Supplies</a
+    >
+    <a
+      class="nav-item"
+      routerLink="/recipes"
+      (click)="changeClicked('recipes')"
+      [ngClass]="{ 'tab-color': checkClicked('recipes') }"
+      >Recipes</a
+    >
+    <a
+      class="nav-item"
+      routerLink="/about"
+      (click)="changeClicked('about')"
+      [ngClass]="{ 'tab-color': checkClicked('about') }"
+      >About</a
+    >
   </nav>
 </header>
 

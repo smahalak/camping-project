@@ -10,13 +10,13 @@ export class CampingServiceService {
   facilityId: string;
   campsiteId: string;
 
-  baseURL: string = 'https://ridb.recreation.gov/api/v1'
+  baseURL: string = 'https://ridb.recreation.gov/api/v1';
 
   selectStateName: string;
-
+  clicked: string = 'home';
   watchList: any[] = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getFacilitiesByState = (state: string): any => {
     let params: any = {
@@ -29,12 +29,12 @@ export class CampingServiceService {
 
   getCampsitesByFacilityId = (facilityId: string): any => {
     let params: any = {
-
       apikey: this.apiKey,
     };
-    return this.http.get(`${this.baseURL}/facilities/${facilityId}/campsites`, { params: params });
+    return this.http.get(`${this.baseURL}/facilities/${facilityId}/campsites`, {
+      params: params,
+    });
   };
-
 
   getCampsiteByCampsiteId = (campsiteId: string) => {
     return this.http.get(`${this.baseURL}/campsites/${campsiteId}`, {
@@ -42,7 +42,7 @@ export class CampingServiceService {
         apikey: this.apiKey,
       },
     });
-  }
+  };
 
   getStateFacility = (): any => {
     return this.http.get(`${this.baseURL}/facilties`, {
@@ -67,5 +67,11 @@ export class CampingServiceService {
     }
 
     console.log(this.watchList);
+  };
+  setClicked = (tab: string) => {
+    this.clicked = tab;
+  };
+  getClicked = () => {
+    return this.clicked;
   };
 }
