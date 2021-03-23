@@ -1,10 +1,8 @@
 <h2 class="supply-heading">Supply List</h2>
-
 <!-- <form #filterForm="ngForm" (input)="setSearchTerm(filterForm)"> -->
 <!-- <input type="text" placeholder="Search for an item" name="filter" ngModel /> -->
 <!-- </form> -->
 <!-- <p>Filter by</p> -->
-
 <form class="supply-form" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <button
     class="btn"
@@ -34,7 +32,6 @@
   <button class="btn" (click)="showFilteredCampingCategory('All')">
     All Supplies
   </button>
-
   <div class="supply-list-container">
     <div *ngIf="onKitchen" class="supply-type-div">
       <h3>Kitchen Supplies</h3>
@@ -46,7 +43,6 @@
         </li>
       </ul>
     </div>
-
     <div *ngIf="onBBQ" class="supply-type-div">
       <h3>BBQ Supplies</h3>
       <ul class="BBQ-filter">
@@ -57,7 +53,6 @@
         </li>
       </ul>
     </div>
-
     <div *ngIf="onFirepit" class="supply-type-div">
       <h3>Firepit Essentials</h3>
       <ul class="Firepit-filter">
@@ -68,7 +63,6 @@
         </li>
       </ul>
     </div>
-
     <div *ngIf="onCamping" class="supply-type-div">
       <h3>Campsite Supplies</h3>
       <ul class="Camping-filter">
@@ -79,7 +73,6 @@
         </li>
       </ul>
     </div>
-
     <div *ngIf="onDefault" class="supply-type-div">
       <h3>Bear Necessities</h3>
       <ul class="Default-filter">
@@ -90,7 +83,6 @@
         </li>
       </ul>
     </div>
-
     <div *ngIf="onElectric" class="supply-type-div">
       <h3>Electrical Supplies</h3>
       <ul class="Electric-filter">
@@ -110,27 +102,28 @@
       </p>
     </li>
   </ul> -->
-
-  <label class="add-item-text" for="name">Add an Item </label>
-  <input
-    type="text"
-    placeholder="Add an item"
-    name="name"
-    id="name"
-    #element
-    ngModel
-  />
-  <label class="add-item-text" for="type">Item Type</label>
-  <select name="type" id="type" ngModel>
-    <option value="Camping">Camping</option>
-    <option value="Kitchen">Kitchen</option>
-    <option value="BBQ">BBQ</option>
-    <option value="Firepit">Firepit</option>
-    <option value="Electric">Electric</option>
-  </select>
-  <button class="add-btn">Add</button>
+  <div class="add-item">
+    <label class="add-item-text" for="name">Add an Item </label>
+    <input
+      class="form-border"
+      type="text"
+      placeholder="Add an item"
+      name="name"
+      id="name"
+      #element
+      ngModel
+    />
+    <label class="add-item-text" for="type">Item Type</label>
+    <select name="type" id="type" class="form-border" ngModel>
+      <option value="Camping">Camping</option>
+      <option value="Kitchen">Kitchen</option>
+      <option value="BBQ">BBQ</option>
+      <option value="Firepit">Firepit</option>
+      <option value="Electric">Electric</option>
+    </select>
+    <button class="add-btn btn form-border">Add</button>
+  </div>
 </form>
-
 <!-- <button class="btn" (click)="showDiv(onPacking)">Show My List</button>
 <div *ngIf="onPacking">
   <ul>
