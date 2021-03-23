@@ -1,11 +1,11 @@
-<h2>Supply List</h2>
+<h2 class="supply-heading">Supply List</h2>
 
 <!-- <form #filterForm="ngForm" (input)="setSearchTerm(filterForm)"> -->
 <!-- <input type="text" placeholder="Search for an item" name="filter" ngModel /> -->
 <!-- </form> -->
 <!-- <p>Filter by</p> -->
 
-<form #addForm="ngForm" (ngSubmit)="addItem(addForm)">
+<form class="supply-form" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <button
     class="btn"
     (click)="
@@ -31,6 +31,10 @@
   <button class="btn" (click)="showFilteredCampingCategory('Electric')">
     Electrical Supplies
   </button>
+  <button class="btn" (click)="showFilteredCampingCategory('All')">
+    All Supplies
+  </button>
+
   <div class="supply-list-container">
     <div *ngIf="onKitchen" class="supply-type-div">
       <h3>Kitchen Supplies</h3>
@@ -107,7 +111,7 @@
     </li>
   </ul> -->
 
-  <label for="name">Add an Item </label>
+  <label class="add-item-text" for="name">Add an Item </label>
   <input
     type="text"
     placeholder="Add an item"
@@ -116,7 +120,7 @@
     #element
     ngModel
   />
-  <label for="type">Item Type</label>
+  <label class="add-item-text" for="type">Item Type</label>
   <select name="type" id="type" ngModel>
     <option value="Camping">Camping</option>
     <option value="Kitchen">Kitchen</option>
@@ -126,14 +130,12 @@
   </select>
   <button class="add-btn">Add</button>
 </form>
-<button class="btn" (click)="showDiv(onPacking)">Show My List</button>
+
+<!-- <button class="btn" (click)="showDiv(onPacking)">Show My List</button>
 <div *ngIf="onPacking">
   <ul>
     <li *ngFor="let item of showPackingList()">
       <p>{{ item.name }}</p>
     </li>
   </ul>
-</div>
-
-<!-- see how we can use like the above to filter with showFilteredCampingCategory -->
-<!-- *ngFor="let item of showFilteredCampingCategory()"> -->
+</div> -->

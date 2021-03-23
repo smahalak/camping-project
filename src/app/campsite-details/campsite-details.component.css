@@ -1,29 +1,38 @@
-.campsite-details-div {
+.campsite-parent-details-div {
   display: flex;
   flex-direction: column;
-  color: #ffa500;
+  color: #ffba00;
   width: 30%;
   height: 30%;
   margin: 30%;
   justify-content: space-between;
   align-items: center;
 }
-div.campsite-details-div {
+div.campsite-parent-details-div {
   background-color: #202b36;
-  width: 24em;
+  width: 30em;
   height: 16em;
   overflow-x: hidden;
   overflow-y: auto;
   text-align: center;
   padding: 20px;
 }
+.list-style {
+  justify-content: space-between;
+  padding: 0.5em;
+  margin: 1em;
+}
 .camp-details-header {
   font-size: 1.2em;
-  color: #ffa500;
+  color: #ffba00;
 }
-.attributes-style {
+.campsite-child-details-div {
   display: flex;
   flex-direction: column;
+}
+.list-background {
+  background-color: rgba(189, 195, 199, 0.2);
+  color: #ff8c00;
 }
 @media only screen and (min-width: 768px) {
 }

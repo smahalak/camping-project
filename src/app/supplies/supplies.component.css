@@ -1,3 +1,17 @@
+.supply-heading {
+  color: white;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+  font-size: 3.3em;
+  margin: 1em 0;
+}
+
+.supply-form {
+  margin-top: 10em;
+}
+
 .dontAdd {
   text-decoration: line-through;
 }
@@ -7,10 +21,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  backdrop-filter: contrast(0.5);
+  /* backdrop-filter: contrast(0.5); */
   margin: 4px 7px;
   padding: 5px 5px;
   border: 1px solid;
+
+  background-color: #222831;
+  opacity: 0.9;
+  width: 300px;
+  border: 1px solid;
+  color: white;
+  border-radius: 10px;
 }
 .kitchen-filter {
   color: blue;
@@ -34,6 +55,12 @@
 
 .Electric-filter {
   color: gold;
+}
+
+.add-item-text {
+  color: white;
+  text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
+  font-size: 1.3em;
 }
 
 @media (min-width: 768px) {

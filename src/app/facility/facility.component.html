@@ -1,36 +1,39 @@
 <!-- Displays the Camp Facility Name and phone number -->
 
-<div class="campsite-display">
-  <p class="name-text facility-name">
-    {{ facilityRef?.FacilityName }} <i class="fas fa-campground tent-logo"></i>
-  </p>
-  <p class="name-text facility-phone">
-    <i
-      *ngIf="facilityRef?.FacilityPhone?.length != 0"
-      class="fa fa-phone phone"
-    >
-    </i>
-    {{ facilityRef?.FacilityPhone }}
-  </p>
-  <!-- User clicks on button and shows campsites -->
-  <button class="btn" (click)="getCampsites(facilityRef.FacilityID)">
-    Available campsites!
-  </button>
-</div>
-
-<!-- loops through campsiteID -->
-
-<div *ngIf="showDetails" class="campsites">
-  <div *ngFor="let camp of campsiteArray" class="campsite-div">
-    <!-- Provides campsite names -->
-    <app-campsite
-      [campRef]="camp"
-      [watchListRef]="watchListRef"
-      (watchListEvent)="emitWatchListEvent($event)"
-    >
-    </app-campsite>
+<div background-image>
+  <div class="campsite-display">
+    <p class="name-text facility-name">
+      {{ facilityRef?.FacilityName }}
+      <i class="fas fa-campground tent-logo"></i>
+    </p>
+    <p class="name-text facility-phone">
+      <i
+        *ngIf="facilityRef?.FacilityPhone?.length != 0"
+        class="fa fa-phone phone"
+      >
+      </i>
+      {{ facilityRef?.FacilityPhone }}
+    </p>
+    <!-- User clicks on button and shows campsites -->
+    <button class="btn" (click)="getCampsites(facilityRef.FacilityID)">
+      Available campsites!
+    </button>
   </div>
-  <div class="error" *ngIf="campsiteArray.length === 0">
-    <p>No campsite Info</p>
+
+  <!-- loops through campsiteID -->
+
+  <div *ngIf="showDetails" class="campsites">
+    <div *ngFor="let camp of campsiteArray" class="campsite-div">
+      <!-- Provides campsite names -->
+      <app-campsite
+        [campRef]="camp"
+        [watchListRef]="watchListRef"
+        (watchListEvent)="emitWatchListEvent($event)"
+      >
+      </app-campsite>
+    </div>
+    <div class="error" *ngIf="campsiteArray.length === 0">
+      <p>No campsite Info</p>
+    </div>
   </div>
 </div>
