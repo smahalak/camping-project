@@ -31,7 +31,6 @@ export class CampgroundWatchlistComponent implements OnInit {
     this.campService.getCampsitesByFacilityId(campsiteId).subscribe((response) => {
       console.log(Response);
       console.log(campsiteId);
-      //filter method on response
       this.campsiteAttributesArray = response.RECDATA;
       this.setShowActivities();
       // array contains attribute after clicking popup.
