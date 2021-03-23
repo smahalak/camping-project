@@ -4,8 +4,8 @@
       Campsite Name :{{ campsite?.CampsiteName }}
       <i
         class="fas fa-heart"
-        (click)="emitWatchListEvent(campRef)"
-        [ngClass]="{ watchLater: checkWatchList(campRef) }"
+        (click)="emitWatchListEvent(campsite)"
+        [ngClass]="{ watchLater: checkWatchList(campsite) }"
       ></i>
     </h2>
     <h2 class="camp-details-header">

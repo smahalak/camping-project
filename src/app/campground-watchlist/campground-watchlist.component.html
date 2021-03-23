@@ -1,13 +1,13 @@
 <p>campground-watchlist works!</p>
-<ul>
+<ul *ngFor="let camp of watchList">
   <app-campsite
-    *ngFor="let camp of watchList"
-    [camp]="camp"
+    [campRef]="camp"
     (showCampsiteIdEvent)="getCampsiteId($event)"
     (watchListEvent)="onWatch($event)"
     [watchListRef]="watchList"
   ></app-campsite>
 </ul>
+
 <div class="popUp popUpParent" *ngIf="showActivities">
   <p
     *ngIf="findAttributes(campsiteAttributesArray, 'BBQ')"

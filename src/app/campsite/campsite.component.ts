@@ -16,9 +16,9 @@ export class CampsiteComponent implements OnInit {
   constructor(
     private campService: CampingServiceService,
     private router: Router
-  ) {}
+  ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
 
   goToCampsiteDetails = (campsiteId: string) => {
     this.router.navigate([`/campsite-details/${campsiteId}`]);
@@ -30,6 +30,9 @@ export class CampsiteComponent implements OnInit {
 
   checkWatchList = (campsiteName: any): boolean => {
     return this.watchListRef.some((item) => {
+      console.log(item);
+      console.log(campsiteName);
+
       return item.CampsiteID === campsiteName.CampsiteID;
     });
   };

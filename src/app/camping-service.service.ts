@@ -20,7 +20,7 @@ export class CampingServiceService {
 
   getFacilitiesByState = (state: string): any => {
     let params: any = {
-      limit: '10',
+      limit: '20',
       state: state,
       apikey: this.apiKey,
     };
