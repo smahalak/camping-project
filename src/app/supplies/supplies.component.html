@@ -35,7 +35,7 @@
   <div class="supply-list-container">
     <div *ngIf="onKitchen" class="supply-type-div">
       <h3>Kitchen Supplies</h3>
-      <ul class="kitchen-filter">
+      <ul>
         <li *ngFor="let item of showFilteredList('Kitchen'); index as i">
           <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
             {{ item.name }}
@@ -45,7 +45,7 @@
     </div>
     <div *ngIf="onBBQ" class="supply-type-div">
       <h3>BBQ Supplies</h3>
-      <ul class="BBQ-filter">
+      <ul>
         <li *ngFor="let item of showFilteredList('BBQ'); index as i">
           <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
             {{ item.name }}
@@ -55,7 +55,7 @@
     </div>
     <div *ngIf="onFirepit" class="supply-type-div">
       <h3>Firepit Essentials</h3>
-      <ul class="Firepit-filter">
+      <ul>
         <li *ngFor="let item of showFilteredList('Firepit'); index as i">
           <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
             {{ item.name }}
@@ -65,7 +65,7 @@
     </div>
     <div *ngIf="onCamping" class="supply-type-div">
       <h3>Campsite Supplies</h3>
-      <ul class="Camping-filter">
+      <ul>
         <li *ngFor="let item of showFilteredList('Camping'); index as i">
           <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
             {{ item.name }}
@@ -75,7 +75,7 @@
     </div>
     <div *ngIf="onDefault" class="supply-type-div">
       <h3>Bear Necessities</h3>
-      <ul class="Default-filter">
+      <ul>
         <li *ngFor="let item of showFilteredList('Default'); index as i">
           <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
             {{ item.name }}
@@ -85,7 +85,7 @@
     </div>
     <div *ngIf="onElectric" class="supply-type-div">
       <h3>Electrical Supplies</h3>
-      <ul class="Electric-filter">
+      <ul>
         <li *ngFor="let item of showFilteredList('Electric'); index as i">
           <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
             {{ item.name }}
