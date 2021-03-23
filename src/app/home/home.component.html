@@ -1,12 +1,14 @@
-<app-search-criteria
-  (searchStateEvent)="onStateSearch($event)"
-></app-search-criteria>
-<div class="campsite-container">
-  <!-- 2 way binding on appfacility with showDetailEvent. Now these know about each other -->
-  <app-facility
-    *ngFor="let facility of facilityArray"
-    [facilityRef]="facility"
-    (watchListEvent)="onWatch($event)"
-    [watchListRef]="watchList"
-  ></app-facility>
+<div class="home-container">
+  <app-search-criteria
+    (searchStateEvent)="onStateSearch($event)"
+  ></app-search-criteria>
+  <div class="campsite-container">
+    <!-- 2 way binding on appfacility with showDetailEvent. Now these know about each other -->
+    <app-facility
+      *ngFor="let facility of facilityArray"
+      [facilityRef]="facility"
+      (watchListEvent)="onWatch($event)"
+      [watchListRef]="watchList"
+    ></app-facility>
+  </div>
 </div>

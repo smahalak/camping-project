@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -31,4 +31,168 @@
 }
 .tab-color {
   color: rgb(240, 208, 68);
+} */
+
+/* here is where the burger code starts */
+
+.claw {
+  /* margin-right: 300px; */
+  height: 60px;
+  width: 60px;
+}
+
+.nav-item {
+  margin: 5px;
+  padding: 5px;
+  text-decoration: none;
+  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
+  color: white;
+  font-size: 1.4em;
+}
+
+.nav-item:hover {
+  color: rgb(240, 208, 68);
+}
+
+.tab-color {
+  color: rgb(240, 208, 68);
+}
+
+header {
+  background-color: midnightblue;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  position: absolute;
+  top: 0;
+}
+
+nav {
+  /* position: absolute;  Because of header position fixed, nav is taken out of flow but starts at bottom of navbar  */
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: midnightblue;
+  /* display: none;   .nav-toggle:checked ~ nav so when checkbox is checked the nav will appear   */
+  transform: scale(
+    1,
+    0
+  ); /* first value will retain size horizontally: width is 100%, the 0 makes the height smoosh together and look like it has disappeared*/
+  transform-origin: top;
+  transition: transform 450ms ease-in-out;
+}
+
+nav ul {
+  list-style: none;
+}
+nav li {
+  /* margin-bottom: 1em; */
+  /* margin-left: 1em; */
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 250ms ease-in-out 250ms; /* adds a delay to the li showing up after click  */
+}
+
+.nav-toggle:checked ~ nav li {
+  opacity: 1;
+  transition: opacity 150ms ease-in-out; /* closing the burger will not delay  */
+}
+
+/* nav li:hover {
+  color: gold;
+} */
+
+/* ~ looks for any preceeding sibling, in this case the nav  */
+.nav-toggle:checked ~ nav {
+  display: block;
+  transform: scale(
+    1,
+    1
+  ); /* now when we click burger logo it will show the menu now that the second value is no longer 0 from nav scale  */
+}
+
+/* hides the checkbox */
+.nav-toggle {
+  display: none;
+}
+
+/* makes the burger icon */
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+/* creates the burger white bar */
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+/* makes the white line thicker */
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+}
+
+/* makes another white line appear */
+.nav-toggle-label span::before {
+  bottom: 8px;
+}
+
+/* makes another white line appear */
+.nav-toggle-label span::after {
+  top: 8px;
+}
+
+@media (min-width: 768px) {
+  .main-heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-toggle-label {
+    display: none;
+  }
+
+  nav {
+    all: unset; /* Removes eveything that had been done on the mobile version */
+  }
+
+  nav li {
+    opacity: 1;
+    /* padding: 0.3em 0.5em; */
+  }
+
+  nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; /* I do not understand why this is not working  */
+  }
+
+  header {
+    position: absolute;
+    top: 0;
+    /* padding-bottom: 1em; */
+  }
 }

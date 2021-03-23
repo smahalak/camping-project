@@ -5,11 +5,16 @@
   transform: translate(-50%);
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   font-size: 3.3em;
-  margin: 1em 0;
+  /* margin: 1em 0; */
 }
 .supply-form {
-  margin-top: 10em;
+  margin-top: 120px;
 }
+
+.filter-container {
+  margin-top: 120px;
+}
+
 .dontAdd {
   text-decoration: line-through;
 }
