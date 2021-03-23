@@ -1,10 +1,14 @@
 .campsite-parent-details-div {
-  display: flex;
-  flex-direction: column;
+  margin-top: 150px;
+  /* display: flex; */
+  /* flex-direction: column; */
   color: #ffba00;
-  margin: auto;
-  justify-content: space-between;
-  align-items: center;
+  /* margin: auto; */
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  /* justify-content: space-between; */
+  /* align-items: center; */
   background-color: #202b36;
 
   width: 30em;

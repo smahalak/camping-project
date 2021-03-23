@@ -1,4 +1,4 @@
-<header class="header">
+<!-- <header class="header">
   <h1 class="main-heading" routerLink="/home">Bear Necessities</h1>
   <img class="claw" src="../assets/bear.png" alt="bear image" />
 
@@ -40,24 +40,68 @@
       >About</a
     >
   </nav>
-</header>
+</header> -->
 
-<!-- <header>
-  <h1 class="logo" routerLink="/home">Bear Necessities</h1>
-  <input type="checkbox" id="nav-toggle" class="nav-toggle" class="nav-toggle">
+<!-- here is where the burger code starts -->
+
+<header>
+  <h1 class="main-heading" routerLink="/home">Bear Necessities</h1>
+  <img class="claw" src="../assets/bear.png" alt="bear image" />
+  <input
+    type="checkbox"
+    id="nav-toggle"
+    class="nav-toggle"
+    class="nav-toggle"
+  />
   <nav>
     <ul>
-      <li routerLink="/home">Home</li>
-      <li routerLink="/supplies">Supplies</li>
-      <li routerLink="/recipes">Recipes</li>
-      <li routerLink="/campground-watchlist">Campsite Watchlist</li>
-      <li routerLink="/about">About</li>
+      <li
+        class="nav-item"
+        routerLink="/home"
+        (click)="changeClicked('about')"
+        [ngClass]="{ 'tab-color': checkClicked('about') }"
+      >
+        Home
+      </li>
+      <li
+        class="nav-item"
+        routerLink="/supplies"
+        (click)="changeClicked('about')"
+        [ngClass]="{ 'tab-color': checkClicked('about') }"
+      >
+        Supplies
+      </li>
+      <li
+        class="nav-item"
+        routerLink="/recipes"
+        (click)="changeClicked('about')"
+        [ngClass]="{ 'tab-color': checkClicked('about') }"
+      >
+        Recipes
+      </li>
+
+      <li
+        class="nav-item"
+        routerLink="/campground-watchlist"
+        (click)="changeClicked('about')"
+        [ngClass]="{ 'tab-color': checkClicked('about') }"
+      >
+        Campsite Watchlist
+      </li>
+
+      <li
+        class="nav-item"
+        routerLink="/about"
+        (click)="changeClicked('about')"
+        [ngClass]="{ 'tab-color': checkClicked('about') }"
+      >
+        About
+      </li>
     </ul>
   </nav>
 
-  
   <label for="nav-toggle" class="nav-toggle-label">
     <span></span>
   </label>
-</header> -->
+</header>
 <!-- for="nav toggle" looks for id in input -->
