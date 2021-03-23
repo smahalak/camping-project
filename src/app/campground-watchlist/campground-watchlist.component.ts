@@ -10,6 +10,7 @@ export class CampgroundWatchlistComponent implements OnInit {
   watchList: any[] = [];
   campsiteAttributesArray: any[];
   showActivities: boolean = false;
+
   constructor(private campService: CampingServiceService) { }
 
   ngOnInit(): void {
@@ -20,10 +21,7 @@ export class CampgroundWatchlistComponent implements OnInit {
     this.watchList = this.campService.getWatchList();
   };
 
-  onWatch = (campsiteName: any): void => {
-    this.campService.toggleWatchList(campsiteName);
-    this.getAndSetWatchList();
-  };
+
   getCampsiteId = (campsiteIdRef: string) => {
     //console.log(stateObjectRef);
     let campsiteId: string = campsiteIdRef;

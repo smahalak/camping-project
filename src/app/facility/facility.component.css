@@ -54,13 +54,18 @@
 .campsite-div {
   display: flex;
   flex-direction: column;
-
-  backdrop-filter: brightness(0.5);
   border: 1px solid;
   margin: 5px;
   padding: 5px;
   align-items: center;
   justify-content: center;
+  /* background-color: rgba(240, 208, 68, 0.8); */
+  background-color: rgba(243, 140, 56, 0.8);
+  /* background-color: #222831; */
+  /* opacity: 0.9; */
+  width: 300px;
+  color: white;
+  border-radius: 10px;
 }
 
 /* need to fix */
@@ -74,6 +79,7 @@
   color: black;
   font-size: 1em;
 }
+
 .error {
   background-color: red;
   color: white;

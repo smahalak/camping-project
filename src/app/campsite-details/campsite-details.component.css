@@ -1,13 +1,19 @@
 .campsite-parent-details-div {
   display: flex;
   flex-direction: column;
-  color: #ffba00;
+  /* color: #ffba00; */
   width: 30%;
   height: 30%;
   margin: 30%;
   justify-content: space-between;
   align-items: center;
 }
+
+/* not sure why this isn't working */
+.watchLater {
+  color: red;
+}
+
 div.campsite-parent-details-div {
   background-color: #202b36;
   width: 30em;
