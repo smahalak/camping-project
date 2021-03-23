@@ -29,24 +29,7 @@
   color: white;
   border-radius: 10px;
 }
-.kitchen-filter {
-  /* color: blue; */
-}
-.BBQ-filter {
-  /* color: rgba(207, 44, 44, 0.651); */
-}
-.onFirepit {
-  /* color: rgb(235, 194, 11); */
-}
-.Camping-filter {
-  /* color: green; */
-}
-.Default-filter {
-  /* color: purple; */
-}
-.Electric-filter {
-  /* color: gold; */
-}
+
 .add-item {
   display: flex;
   flex-direction: row;
@@ -60,6 +43,7 @@
 }
 .add-btn {
   margin-top: 15px;
+  width: 100px;
 }
 .form-border {
   border-radius: 12px;
@@ -70,6 +54,8 @@
   color: white;
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   font-size: 1.3em;
+  margin-right: 12px;
+  font-size: 1.2em;
 }
 @media (min-width: 768px) {
   .supply-list-container {
