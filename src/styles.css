@@ -14,9 +14,7 @@ body {
   background-repeat: no-repeat, repeat;
   background-size: cover;
 }
-html {
-  /* height: 100%; */
-}
+
 .btn {
   border: none;
   background-color: rgb(240, 208, 68);

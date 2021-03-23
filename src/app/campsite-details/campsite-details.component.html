@@ -1,24 +1,28 @@
-<div class="campsite-details-div">
-  <div class="attributes-style">
+<div class="campsite-parent-details-div">
+  <div class="campsite-child-details-div">
     <h2 class="camp-details-header">
       Campsite Name :{{ campsite?.CampsiteName }}
-      <button>HEART</button>
+      <i
+        class="fas fa-heart"
+        (click)="emitWatchListEvent(campRef)"
+        [ngClass]="{ watchLater: checkWatchList(campRef) }"
+      ></i>
     </h2>
-
     <h2 class="camp-details-header">
       Campsite Type:{{ campsite?.CampsiteType }}
     </h2>
     <h2 class="camp-details-header">
       Accessible:{{ campsite?.CampsiteAccessible }}
     </h2>
-    <h2 class="camp-details-header">Campsite Attributes</h2>
-
-    <ol>
-      <li *ngFor="let attribute of campsite?.ATTRIBUTES">
-        <p>Attribute Name: {{ attribute?.AttributeName }}</p>
-        <p>Attribute Value:{{ attribute?.AttributeValue }}</p>
-      </li>
-    </ol>
+    <div class="list-background">
+      <ol class="list-style">
+        <h2 class="camp-details-header">Campsite Attributes</h2>
+        <li class="list-style" *ngFor="let attribute of campsite?.ATTRIBUTES">
+          <p>Attribute Name: {{ attribute?.AttributeName }}</p>
+          <p>Attribute Value:{{ attribute?.AttributeValue }}</p>
+        </li>
+      </ol>
+    </div>
+    <button class="btn" routerLink="/supplies">Pack for This Trip</button>
   </div>
-  <button>Pack for This Trip</button>
 </div>
