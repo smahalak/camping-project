@@ -29,8 +29,6 @@ export class CampsiteDetailsComponent implements OnInit {
     });
   }
 
-
-
   emitWatchListEvent = (campsiteName: any): void => {
     // console.log(campsiteName);
     this.campService.toggleWatchList(campsiteName);
@@ -40,6 +38,7 @@ export class CampsiteDetailsComponent implements OnInit {
       return item.CampsiteID === campsiteName.CampsiteID;
     });
   };
+
 
 
 

@@ -44,4 +44,12 @@ export class CampgroundWatchlistComponent implements OnInit {
       return item.AttributeName === type;
     });
   };
+
+
+  onWatch = (campsiteName: any): void => {
+    this.campService.toggleWatchList(campsiteName);
+    this.getAndSetWatchList();
+  }
+
+
 }

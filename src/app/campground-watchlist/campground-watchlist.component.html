@@ -1,4 +1,11 @@
-<ul class="test" *ngFor="let camp of watchList">
+<div class="bear-div" *ngIf="watchList.length === 0">
+  <img class="claw" src="../assets/bear.png" alt="bear image" />
+  <p class="bear-text">
+    Search for a campsite and click the heart to add to your favorite list.
+  </p>
+</div>
+
+<ul class="campsite-card" *ngFor="let camp of watchList">
   <app-campsite
     [campRef]="camp"
     (showCampsiteIdEvent)="getCampsiteId($event)"
