@@ -1,6 +1,10 @@
 .watch-list-container {
   margin-top: 150px;
   display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .bear-div {
@@ -85,4 +89,9 @@
   border: 1px solid;
   margin: 5px;
   padding: 5px;
+}
+@media only screen and (min-width: 768px) {
+  .watch-list-container {
+    flex-direction: row;
+  }
 }
