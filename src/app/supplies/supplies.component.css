@@ -5,6 +5,7 @@
   transform: translate(-50%);
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   font-size: 3.3em;
+  margin: 0;
   /* margin: 1em 0; */
 }
 .supply-form {
@@ -30,7 +31,8 @@
   border: 1px solid;
   background-color: #222831;
   opacity: 0.9;
-  width: 300px;
+  width: 30em;
+  height: 15em;
   border: 1px solid;
   color: white;
   border-radius: 10px;
@@ -80,15 +82,21 @@
   margin-right: 12px;
   font-size: 1em;
 }
+
 @media (min-width: 768px) {
+  .top-btns {
+    width: 65%;
+    margin: auto;
+  }
   .supply-list-container {
     display: flex;
-    flex: 1 30%;
+    flex: 1 40%;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
   }
-  /* .supply-type-div {
-    flex: 1 20%;
-  } */
+  .add-item {
+    width: 40%;
+    margin: auto;
+  }
 }
