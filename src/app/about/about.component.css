@@ -8,16 +8,21 @@
   justify-content: center;
   align-items: center;
 }
+
+.card-spacing {
+  margin-top: 2em;
+}
+
 .abouts {
   display: flex;
   flex: 1 30%;
   flex-direction: column;
   background-color: #202b36;
-  padding: 20px;
-  margin: 10px;
+  padding: 0.6em 1.4em;
+  margin: 1em;
   justify-content: center;
   align-items: center;
-  height: 40em;
+  height: 37em;
   width: 20em;
   border-radius: 5%;
 }
@@ -63,6 +68,7 @@
 .linkedin {
   height: 2.8em;
   width: 2.8em;
+  border-radius: 8px;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
