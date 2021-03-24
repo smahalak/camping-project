@@ -35,10 +35,22 @@
 
 /* here is where the burger code starts */
 
+.main-heading {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center; */
+  font-size: 2em;
+  color: rgb(240, 208, 68);
+  text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
+}
+
 .claw {
-  /* margin-right: 300px; */
-  height: 60px;
-  width: 60px;
+  height: 4em;
+  width: 4em;
 }
 
 .nav-item {
@@ -160,6 +172,20 @@ nav li {
   top: 8px;
 }
 
+@media (min-width: 375px) {
+  .main-heading {
+    font-size: 2em;
+    color: rgb(240, 208, 68);
+    text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black,
+      0 -0.03em black;
+  }
+
+  .claw {
+    height: 5.4em;
+    width: 5.4em;
+  }
+}
+
 @media (min-width: 768px) {
   .main-heading {
     position: absolute;
@@ -169,6 +195,22 @@ nav li {
     height: 100%;
     display: flex;
     align-items: center;
+    font-size: 4em;
+    color: rgb(240, 208, 68);
+    text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black,
+      0 -0.03em black;
+  }
+
+  .bear-nav-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .claw {
+    height: 6.2em;
+    width: 6.2em;
+    /* opacity: 0; */
   }
 
   .nav-toggle-label {
@@ -196,3 +238,26 @@ nav li {
     /* padding-bottom: 1em; */
   }
 }
+
+/* @media (min-width: 769px) {
+  .claw {
+    opacity: 0;
+    height: 6em;
+    width: 6em;
+  }
+}
+
+@media (min-width: 1260px) {
+  .claw {
+    opacity: 0;
+    height: 6em;
+    width: 6em;
+  }
+}
+
+@media (min-width: 1261px) {
+  .claw {
+    height: 6em;
+    width: 6em;
+  }
+} */
