@@ -25,9 +25,17 @@
   color: rgb(240, 208, 68);
   margin-top: 0;
 }
+
+.profile-photo {
+  height: 22em;
+  width: 20em;
+  border-radius: 15px;
+}
+
 .about-text {
   background-color: white;
   height: 5em;
+  border-radius: 5px;
   overflow-x: hidden;
   overflow-y: auto;
 }
@@ -43,6 +51,23 @@
   background: rgb(240, 208, 68);
   border-radius: 10px;
 }
+
+.about-paragraph {
+  margin: 5px;
+}
+
+.linkedin-container {
+  position: relative;
+}
+
+.linkedin {
+  height: 2.8em;
+  width: 2.8em;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
 @media only screen and (min-width: 768px) {
   .about-container {
     flex-direction: row;
