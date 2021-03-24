@@ -83,10 +83,12 @@
 @media (min-width: 768px) {
   .supply-list-container {
     display: flex;
+    flex: 1 30%;
+    flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
   }
-  .supply-type-div {
+  /* .supply-type-div {
     flex: 1 20%;
-  }
+  } */
 }
