@@ -37,7 +37,7 @@
 
 .main-heading {
   font-size: 2em;
-  color: rgb(240, 208, 68);
+  /* color: rgb(240, 208, 68); */
   text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black, 0 -0.03em black;
 }
 
@@ -182,7 +182,7 @@ nav li {
     display: flex;
     align-items: center;
     font-size: 4em;
-    color: rgb(240, 208, 68);
+    /* color: rgb(240, 208, 68); */
     text-shadow: 0.03em 0 black, 0 0.03em black, -0.03em 0 black,
       0 -0.03em black;
   }

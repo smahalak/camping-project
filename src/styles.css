@@ -4,7 +4,7 @@
   font-family: "Rubik", sans-serif;
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 /*border-box  makes it so your padding doesn't push out your container width instead it pushes the content inwards to make it easier to calculate widths and stuff */
 

@@ -109,3 +109,8 @@
     display: flex;
   }
 } */
+@media (min-width: 768px) {
+  .campsite-display {
+    width: 300px;
+  }
+}
