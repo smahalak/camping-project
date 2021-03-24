@@ -15,7 +15,7 @@
     ></app-campsite>
   </ul>
 
-  <div class="popUp popUpParent" *ngIf="showActivities">
+  <!-- <div class="popUp popUpParent" *ngIf="showActivities">
     <p
       *ngIf="findAttributes(campsiteAttributesArray, 'BBQ')"
       routerLink="/supplies"
@@ -46,15 +46,15 @@
 
     <p *ngIf="findAttributes(campsiteAttributesArray, 'Pets Allowed')">
       Show Pets logo
-    </p>
+    </p> -->
 
-    <!-- Displaying the Attributes on the Pop Up -->
-    <!-- <div  class="attributeText" *ngFor="let item of campsiteAttributesArray">
+  <!-- Displaying the Attributes on the Pop Up -->
+  <!-- <div  class="attributeText" *ngFor="let item of campsiteAttributesArray">
       <ul>
       <li>{{ item.AttributeName }}: {{ item.AttributeValue }}</li>
     </ul>
     </div> -->
 
-    <button class="popUp-button" (click)="setShowActivities()">X</button>
-  </div>
+  <!-- <button class="popUp-button" (click)="setShowActivities()">X</button>
+  </div> -->
 </div>
