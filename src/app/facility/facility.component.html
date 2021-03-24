@@ -1,24 +1,24 @@
 <!-- Displays the Camp Facility Name and phone number -->
 
-<div background-image>
-  <div class="campsite-display">
-    <p class="name-text facility-name">
-      {{ facilityRef?.FacilityName }}
-      <i class="fas fa-campground tent-logo"></i>
-    </p>
-    <p class="name-text facility-phone">
-      <i
-        *ngIf="facilityRef?.FacilityPhone?.length != 0"
-        class="fa fa-phone phone"
-      >
-      </i>
-      {{ facilityRef?.FacilityPhone }}
-    </p>
-    <!-- User clicks on button and shows campsites -->
-    <button class="btn" (click)="getCampsites(facilityRef.FacilityID)">
-      Available campsites!
-    </button>
-  </div>
+<!-- <div background-image> -->
+<div class="campsite-display">
+  <p class="name-text facility-name">
+    {{ facilityRef?.FacilityName }}
+    <i class="fas fa-campground tent-logo"></i>
+  </p>
+  <p class="name-text facility-phone">
+    <i
+      *ngIf="facilityRef?.FacilityPhone?.length != 0"
+      class="fa fa-phone phone"
+    >
+    </i>
+    {{ facilityRef?.FacilityPhone }}
+  </p>
+  <!-- User clicks on button and shows campsites -->
+  <button class="btn" (click)="getCampsites(facilityRef.FacilityID)">
+    Available campsites!
+  </button>
+  <!-- </div> -->
 
   <!-- loops through campsiteID -->
 

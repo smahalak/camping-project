@@ -7,10 +7,11 @@
 }
 .campsite-container {
   display: flex;
-  margin-left: 6em;
+  /* margin-left: 6em; */
   padding: 10px;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .facility-container {
   background-color: slategray;

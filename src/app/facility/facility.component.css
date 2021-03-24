@@ -15,7 +15,7 @@
   opacity: 0.9;
   margin: 4px 7px;
   padding: 5px 5px;
-  width: 300px;
+  max-width: 300px;
   border: 1px solid;
   color: white;
   border-radius: 10px;
@@ -63,7 +63,7 @@
   background-color: rgba(243, 140, 56, 0.8);
   /* background-color: #222831; */
   /* opacity: 0.9; */
-  width: 300px;
+  /* width: 300px; */
   color: white;
   border-radius: 10px;
 }
