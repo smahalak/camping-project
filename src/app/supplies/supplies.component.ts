@@ -174,18 +174,6 @@ export class SuppliesComponent implements OnInit {
 
     },
     {
-      name: 'Charcoal',
-      type: 'BBQ',
-      needed: true,
-
-    },
-    {
-      name: 'Charcoal lighter fluid',
-      type: 'BBQ',
-      needed: true,
-
-    },
-    {
       name: 'Sleeping pads',
       type: 'Camping',
       needed: true,
@@ -627,13 +615,41 @@ export class SuppliesComponent implements OnInit {
       name: 'Charcoal lighter fluid',
       type: 'BBQ',
       needed: true,
-
     },
     {
       name: 'Charcoal',
       type: 'BBQ',
       needed: true,
-
+    },
+    {
+      name: 'BBQ brush',
+      type: 'BBQ',
+      needed: true,
+    },
+    {
+      name: 'Smoking chips',
+      type: 'BBQ',
+      needed: true,
+    },
+    {
+      name: 'Heat resistant gloves',
+      type: 'BBQ',
+      needed: true,
+    },
+    {
+      name: 'Bamboo skewer',
+      type: 'BBQ',
+      needed: true,
+    },
+    {
+      name: 'Stainless steeel turner/tongs',
+      type: 'BBQ',
+      needed: true,
+    },
+    {
+      name: 'Meat thermometer',
+      type: 'BBQ',
+      needed: true,
     },
   ];
 
@@ -691,20 +707,24 @@ export class SuppliesComponent implements OnInit {
 
   showFilteredCampingCategory = (type: string): void => {
     if (type === 'Camping') {
+      this.resetTypes();
       this.onCamping = !this.onCamping;
     } else if (type === 'Kitchen') {
+      this.resetTypes();
       this.onKitchen = !this.onKitchen;
     } else if (type === 'BBQ') {
+      this.resetTypes();
       this.onBBQ = !this.onBBQ;
     } else if (type === 'Firepit') {
+      this.resetTypes();
       this.onFirepit = !this.onFirepit;
     } else if (type === 'Electric') {
+      this.resetTypes();
       this.onElectric = !this.onElectric;
     } else if (type === 'Default') {
+      this.resetTypes();
       this.onDefault = !this.onDefault;
-    }
-
-    if (type === 'All') {
+    } else if (type === 'All') {
       this.onCamping = true;
       this.onKitchen = true;
       this.onBBQ = true;
@@ -712,7 +732,16 @@ export class SuppliesComponent implements OnInit {
       this.onElectric = true;
       this.onDefault = true;
     }
-  }
+  };
+  resetTypes = (): void => {
+    this.onPacking = false;
+    this.onCamping = false;
+    this.onDefault = false;
+    this.onKitchen = false;
+    this.onBBQ = false;
+    this.onFirepit = false;
+    this.onElectric = false;
+  };
 
 
 
