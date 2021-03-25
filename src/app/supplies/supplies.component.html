@@ -6,7 +6,7 @@
 <form class="supply-form" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <div class="top-btns">
     <div *ngIf="onPacking">
-      <button id="download" class="btn" (click)="convertToPdf()">
+      <button id="download" class="btn packing-btn" (click)="convertToPdf()">
         Download PDF
       </button>
 
