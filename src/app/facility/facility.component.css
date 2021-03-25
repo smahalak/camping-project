@@ -1,7 +1,3 @@
-/* .background-image {
-  background-size: cover;
-} */
-
 .campsite-display {
   font-size: 0.9em;
   margin: 5px;
@@ -9,15 +5,38 @@
   display: flex;
   flex: 1 20%;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   background-color: #222831;
   opacity: 0.9;
-  margin: 4px 7px;
-  padding: 5px 5px;
-  max-width: 300px;
   border: 1px solid;
   color: white;
+  border-radius: 10px;
+  height: 15em;
+}
+.camp-background {
+  background-color: #222831;
+  opacity: 0.9;
+  margin: 5px;
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: auto;
+  border-radius: 10px;
+  height: 15em;
+}
+::-webkit-scrollbar {
+  width: 0.8em;
+  overflow-y: scroll;
+  background: grey;
+  border-radius: 10px;
+  box-shadow: inset 0 0 4px #707070;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(240, 208, 68);
   border-radius: 10px;
 }
 
@@ -47,10 +66,7 @@
   text-transform: uppercase;
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
 }
-.campsites {
-  flex-direction: inherit;
-  font-size: 0.9em;
-}
+
 .campsite-div {
   display: flex;
   flex-direction: column;
@@ -66,6 +82,9 @@
   /* width: 300px; */
   color: white;
   border-radius: 10px;
+  height: 80%;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 /* need to fix */
@@ -77,6 +96,14 @@
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.campsite-div {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
 }
 .btn {
   color: black;
