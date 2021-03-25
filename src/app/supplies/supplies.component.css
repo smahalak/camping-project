@@ -53,7 +53,17 @@
   background: rgb(240, 208, 68);
   border-radius: 10px;
 }
-
+#content {
+  columns: 3;
+  width: 30em;
+  background: white;
+  padding: 5px 10px;
+  margin: 10px;
+  border-radius: 12px;
+}
+#content li {
+  list-style: none;
+}
 .add-item {
   display: flex;
   flex-direction: row;
