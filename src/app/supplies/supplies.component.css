@@ -54,11 +54,11 @@
   border-radius: 10px;
 }
 #content {
-  columns: 3;
-  width: 30em;
+  columns: 6;
+  width: 60em;
   background: white;
-  padding: 5px 10px;
-  margin: 10px;
+  padding: 10px;
+  margin-top: 3em;
   border-radius: 12px;
 }
 #content li {

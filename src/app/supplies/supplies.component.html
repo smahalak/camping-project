@@ -5,6 +5,18 @@
 <!-- <p>Filter by</p> -->
 <form class="supply-form" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <div class="top-btns">
+    <div *ngIf="onPacking">
+      <ul id="content">
+        <li *ngFor="let item of showPackingList()">
+          <p>{{ item.name }}</p>
+        </li>
+      </ul>
+
+      <button id="download" class="btn" (click)="convertToPdf()">
+        Download PDF
+      </button>
+    </div>
+
     <button
       class="btn"
       (click)="
@@ -14,7 +26,8 @@
     >
       Add new item
     </button>
-    <button class="btn" (click)="showDiv(onPacking)">showPackingList</button>
+
+    <button class="btn" (click)="showDiv(onPacking)">Show Packing List</button>
     <button
       class="btn filter-container"
       (click)="showFilteredCampingCategory('Default')"
@@ -149,15 +162,3 @@
     <button class="add-btn btn form-border">Add</button>
   </div>
 </form>
-
-<div *ngIf="onPacking">
-  <button id="download" class="btn" (click)="convertToPdf()">
-    Download PDF
-  </button>
-
-  <ul id="content">
-    <li *ngFor="let item of showPackingList()">
-      <p>{{ item.name }}</p>
-    </li>
-  </ul>
-</div>

@@ -19,7 +19,7 @@ export class SuppliesComponent implements OnInit {
   onFirepit: boolean = false;
   onElectric: boolean = false;
 
-  constructor(private _vps: ViewportScroller) {}
+  constructor(private _vps: ViewportScroller) { }
 
   supplies: Supply[] = [
     {
@@ -649,7 +649,7 @@ export class SuppliesComponent implements OnInit {
     var container = document.getElementById('content') as HTMLImageElement;
     html2canvas(container).then((canvas) => {
       var imgWidth = 208;
-      var pageHeight = 295;
+      var pageHeight = 695;
       var imgHeight = (canvas.height * imgWidth) / canvas.width;
       var heightLeft = imgHeight;
 
