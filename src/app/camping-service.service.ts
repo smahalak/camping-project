@@ -1,56 +1,42 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { secret } from './secrets';
+
+import { environment } from
+  'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CampingServiceService {
-  apiKey: string = secret.api_key;
+
   facilityId: string;
   campsiteId: string;
 
-  baseURL: string = 'https://ridb.recreation.gov/api/v1';
+  baseURL: string = environment.apiBaseUrl
 
   selectStateName: string;
   clicked: string = 'home';
   watchList: any[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getFacilitiesByState = (state: string): any => {
     let params: any = {
-      limit: '20',
       state: state,
-      apikey: this.apiKey,
     };
-    return this.http.get(`${this.baseURL}/facilities`, { params: params });
+    return this.http.get(`${this.baseURL}/facilities-by-state`, { params: params });
   };
 
   getCampsitesByFacilityId = (facilityId: string): any => {
-    let params: any = {
-      apikey: this.apiKey,
-    };
-    return this.http.get(`${this.baseURL}/facilities/${facilityId}/campsites`, {
-      params: params,
-    });
+    return this.http.get(`${this.baseURL}/campsites-by-facility-id/${facilityId}`);
   };
 
   getCampsiteByCampsiteId = (campsiteId: string) => {
-    return this.http.get(`${this.baseURL}/campsites/${campsiteId}`, {
-      headers: {
-        apikey: this.apiKey,
-      },
-    });
+    return this.http.get(`${this.baseURL}/campsite-by-campsite-id/${campsiteId}`
+    );
   };
 
-  getStateFacility = (): any => {
-    return this.http.get(`${this.baseURL}/facilties`, {
-      headers: {
-        apikey: this.apiKey,
-      },
-    });
-  };
+
 
   getWatchList = (): any => {
     return this.watchList;
