@@ -14,7 +14,7 @@
     >
       Add new item
     </button>
-
+    <button class="btn" (click)="showDiv(onPacking)">showPackingList</button>
     <button
       class="btn filter-container"
       (click)="showFilteredCampingCategory('Default')"
@@ -149,11 +149,15 @@
     <button class="add-btn btn form-border">Add</button>
   </div>
 </form>
-<!-- <button class="btn" (click)="showDiv(onPacking)">Show My List</button>
+
 <div *ngIf="onPacking">
-  <ul>
+  <button id="download" class="btn" (click)="convertToPdf()">
+    Download PDF
+  </button>
+
+  <ul id="content">
     <li *ngFor="let item of showPackingList()">
       <p>{{ item.name }}</p>
     </li>
   </ul>
-</div> -->
+</div>
