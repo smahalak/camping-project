@@ -6,15 +6,15 @@
 <form class="supply-form" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <div class="top-btns">
     <div *ngIf="onPacking">
+      <button id="download" class="btn" (click)="convertToPdf()">
+        Download PDF
+      </button>
+
       <ul id="content">
         <li *ngFor="let item of showPackingList()">
           <p>{{ item.name }}</p>
         </li>
       </ul>
-
-      <button id="download" class="btn" (click)="convertToPdf()">
-        Download PDF
-      </button>
     </div>
 
     <button
