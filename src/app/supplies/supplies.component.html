@@ -1,8 +1,5 @@
 <h2 class="supply-heading">Supply List</h2>
-<!-- <form #filterForm="ngForm" (input)="setSearchTerm(filterForm)"> -->
-<!-- <input type="text" placeholder="Search for an item" name="filter" ngModel /> -->
-<!-- </form> -->
-<!-- <p>Filter by</p> -->
+
 <form class="supply-form" #addForm="ngForm" (ngSubmit)="addItem(addForm)">
   <div class="top-btns">
     <div *ngIf="onPacking">
@@ -131,14 +128,6 @@
       </ul>
     </div>
   </div>
-  <!-- <ul>
-    <li *ngFor="let item of filter(searchTerm); index as i">
-      <p [ngClass]="{ dontAdd: !item.needed }" (click)="neededItem(item)">
-        {{ item.name }}
-        <button class="delete-btn" (click)="deleteItem(i)">X</button>
-      </p>
-    </li>
-  </ul> -->
 
   <div class="add-item">
     <label class="add-item-text" for="name">Add an Item </label>

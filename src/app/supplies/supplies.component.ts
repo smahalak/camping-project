@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Supply } from '../interfaces/supply';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import { ViewportScroller } from '@angular/common';
+
 @Component({
   selector: 'app-supplies',
   templateUrl: './supplies.component.html',
@@ -19,7 +19,7 @@ export class SuppliesComponent implements OnInit {
   onFirepit: boolean = false;
   onElectric: boolean = false;
 
-  constructor(private _vps: ViewportScroller) { }
+  constructor() { }
 
   supplies: Supply[] = [
     {
@@ -551,30 +551,18 @@ export class SuppliesComponent implements OnInit {
     },
   ];
 
-  searchTerm: string = '';
 
   ngOnInit(): void {
     this.showFilteredList('Default');
   }
 
-  setSearchTerm = (form: NgForm): void => {
-    this.searchTerm = form.form.value.filter;
-  };
-
-  filter = (term: string): Supply[] => {
-    return this.supplies.filter((item) => {
-      return item.name.toLowerCase().includes(term.toLowerCase());
-    });
-  };
 
   find = (term: string): boolean => {
     return this.supplies.some((item) => {
       return item.name.toLowerCase().includes(term.toLowerCase());
     });
   };
-  deleteItem = (index: number): void => {
-    this.supplies.splice(index, 1);
-  };
+
 
   addItem = (form: NgForm): void => {
     let newItem: Supply = {
@@ -585,7 +573,6 @@ export class SuppliesComponent implements OnInit {
 
     if (!this.find(form.form.value.name)) {
       this.supplies.push(newItem);
-      console.log('test');
     }
   };
 
@@ -597,7 +584,7 @@ export class SuppliesComponent implements OnInit {
     this.onPacking = !this.onPacking;
   };
   showPackingList = (): Supply[] => {
-    this.scrollFn('content');
+
     return this.supplies.filter((item) => {
       return item.needed === true;
     });
@@ -660,7 +647,6 @@ export class SuppliesComponent implements OnInit {
       pdf.save('packinglist.pdf');
     });
   };
-  scrollFn(anchor: string): void {
-    this._vps.scrollToAnchor(anchor);
-  }
+
+
 }

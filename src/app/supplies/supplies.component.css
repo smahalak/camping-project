@@ -6,7 +6,6 @@
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
   font-size: 3.3em;
   margin: 0;
-  /* margin: 1em 0; */
 }
 .supply-form {
   margin-top: 120px;
@@ -29,7 +28,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* backdrop-filter: contrast(0.5); */
   margin: 4px 7px;
   padding: 5px 5px;
   border: 1px solid;
@@ -72,13 +70,10 @@
   display: flex;
   flex-direction: row;
   border-radius: 12px;
-  /* margin: 10px; */
   border: 1px solid white;
   padding: 10px;
   background-color: #222831;
   align-items: baseline;
-  /* flex-wrap: wrap; */
-  /* width: 300px; */
 }
 .add-btn {
   margin-top: 15px;
@@ -92,7 +87,6 @@
 .add-item-text {
   color: white;
   text-shadow: 0.07em 0 black, 0 0.07em black, -0.07em 0 black, 0 -0.07em black;
-
   margin-right: 12px;
   font-size: 1em;
 }
