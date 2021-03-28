@@ -21,6 +21,7 @@
 
 .dontAdd {
   text-decoration: line-through;
+  color: red;
 }
 
 .supply-type-div {
